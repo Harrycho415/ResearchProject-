@@ -14,7 +14,7 @@ export default function Index() {
             Edit Profile
           </p>
         </div>
-        <div className="flex-1 text-center ">
+        <div className="flex-1">
           <ProfileEdit />
         </div>
       </div>
