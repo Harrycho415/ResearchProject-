@@ -2,7 +2,6 @@ import '../styles/tailwind.css';
 
 import type { AppProps } from 'next/app';
 import '@near-wallet-selector/modal-ui/styles.css';
-import WithIdAuth from '../components/auth/auth';
 import { AccessTokenWrapper } from '@calimero-is-near/calimero-p2p-sdk';
 import { getNodeUrl } from '../utils/node';
 import { Client, InternetIdentity } from '@bundly/ares-core';
