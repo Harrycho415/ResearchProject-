@@ -6,7 +6,6 @@ export default function Index() {
 
   return (
     <div className="text-white flex ">
-      <Menu></Menu>
       <div className="mx-auto">
         <button
           className="text-center mx-auto my-auto"

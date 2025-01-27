@@ -7,6 +7,7 @@ import { AccessTokenWrapper } from '@calimero-is-near/calimero-p2p-sdk';
 import { getNodeUrl } from '../utils/node';
 import { Client, InternetIdentity } from '@bundly/ares-core';
 import { IcpConnectContextProvider } from '@bundly/ares-react';
+import Menu from '../components/Menu';
 
 export default function App({ Component, pageProps }: AppProps) {
   const client = Client.create({
@@ -25,7 +26,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <IcpConnectContextProvider client={client}>
       <AccessTokenWrapper getNodeUrl={getNodeUrl}>
-        <Component {...pageProps} />
+        <div className="flex">
+          <Menu></Menu>
+          <Component {...pageProps} />
+        </div>
       </AccessTokenWrapper>
     </IcpConnectContextProvider>
   );
