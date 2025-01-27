@@ -1,24 +1,19 @@
 // DefaultLayout.tsx
-import Menu from '../components/Menu';
-import Header from '../components/Header';
+import { useRouter } from 'next/router';
+import Menu from './Menu';
+import React from 'react';
 
 export default function DefaultLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="text-white flex">
-      {/* Fixed Menu */}
-      <Menu />
+  const route = useRouter();
 
-      {/* Main Content */}
-      <div className="flex-1">
-        <Header />
-        <div className="pt-10 pl-[calc(25%)] w-full h-full relative">
-          {children}
-        </div>
-      </div>
+  return (
+    <div className="">
+      <Menu></Menu>
+      <div className="w-full h-full ">{children}</div>
     </div>
   );
 }

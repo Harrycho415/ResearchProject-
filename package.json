@@ -24,6 +24,10 @@
     "clean": "rm -rf .azle && rm -rf .dfx && rm -rf .turbo && rm -rf node_modules"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@heroicons/react": "^2.2.0",
     "azle": "^0.21.1",
     "cors": "^2.8.5",
     "express": "^4.19.2",
