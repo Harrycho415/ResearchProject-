@@ -8,6 +8,7 @@ import {
   Bars3Icon,
   BeakerIcon,
 } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 export default function Layout() {
@@ -38,18 +39,18 @@ export default function Layout() {
           <HomeIcon className="w-[24px] h-[24px] ml-[22px] mr-[16px]"></HomeIcon>
           <p>Dashboard</p>
         </div>
-        <div className="h-[44px] flex items-center">
+        <Link href="/mypage" className="h-[44px] flex items-center">
           <UserCircleIcon className="w-[24px] h-[24px] ml-[22px] mr-[16px]"></UserCircleIcon>
           <p>My Page</p>
-        </div>
-        <div className="h-[44px] flex items-center">
+        </Link>
+        <Link href="/community" className="h-[44px] flex items-center">
           <UserGroupIcon className="w-[24px] h-[24px] ml-[22px] mr-[16px]"></UserGroupIcon>
           <p>Community</p>
-        </div>
-        <div className="h-[44px] flex items-center">
+        </Link>
+        <Link href="/notification" className="h-[44px] flex items-center">
           <BellAlertIcon className="w-[24px] h-[24px] ml-[22px] mr-[16px]"></BellAlertIcon>
           <p>Notification</p>
-        </div>
+        </Link>
         <div className="h-[52px] mt-auto w-full flex items-center">
           <QuestionMarkCircleIcon className="w-[24px] h-[24px] ml-[22px] mr-[16px]"></QuestionMarkCircleIcon>
           <p>Help</p>
