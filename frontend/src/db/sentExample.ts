@@ -1,4 +1,4 @@
-export const notiExample = [
+export const sentExample = [
   {
     id: 'G87yNMcTzQoP5LhXu3JvKwRs9TzxWVcPaMnK48HyXZAB',
     identity: 'UnknownA',
