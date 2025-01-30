@@ -18,7 +18,7 @@ export default function Index() {
         <div className="bg-slate-50 w-fit p-5 rounded-xl text-black mx-auto ">
           <button
             className="cursor-pointer"
-            onClick={() => router.push('/mypage')}
+            onClick={() => router.push('/notification')}
           >
             Click to Login
           </button>

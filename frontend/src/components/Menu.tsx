@@ -11,7 +11,7 @@ import {
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-export default function Layout() {
+export default function Menu({ jwtObject }) {
   const router = useRouter();
 
   return (
@@ -25,15 +25,24 @@ export default function Layout() {
       {/* Sidebar */}
       <div className="fixed top-[72px] left-0 w-1/4 max-w-[378px] h-[calc(100vh-72px)] bg-black text-white flex flex-col z-40">
         <div className="h-[72px] flex items-center justify-between px-4">
-          <LockClosedIcon className="w-14 h-14"></LockClosedIcon>
+          <Link href="/">
+            <LockClosedIcon className="w-14 h-14"></LockClosedIcon>
+          </Link>
           <Bars3Icon className="w-[46px] h-[46px]"></Bars3Icon>
         </div>
         <div className="h-[100px] flex items-center">
           <UserCircleIcon className="w-[40px] h-[40px] ml-[20px] mr-[11px]"></UserCircleIcon>
-          <div>
-            <p>Profile</p>
-            <p>Description</p>
-          </div>
+          {jwtObject ? (
+            <div>
+              <p>Profile</p>
+              <p>{jwtObject?.executor_public_key.slice(0, 20)}...</p>
+            </div>
+          ) : (
+            <div>
+              <p>Profile</p>
+              <p>Description</p>
+            </div>
+          )}
         </div>
         <div className="h-[44px] flex items-center">
           <HomeIcon className="w-[24px] h-[24px] ml-[22px] mr-[16px]"></HomeIcon>

@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import ToggleButton from './ToggleButton';
 import NotiList from './NotiList';
 import { useState } from 'react';
+import { notiExample } from '../../db/notiExample';
 
 export default function Index() {
   const router = useRouter();
@@ -16,8 +17,8 @@ export default function Index() {
         ></ToggleButton>
       </div>
 
-      <div className="w-5/6 mx-auto">
-        <NotiList></NotiList>
+      <div className="w-5/6 mx-auto h-2/3 overflow-y-scroll">
+        <NotiList contents={notiExample}></NotiList>
       </div>
     </div>
   );
