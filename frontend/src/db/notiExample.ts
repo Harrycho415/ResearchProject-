@@ -1,0 +1,58 @@
+export const notiExample = [
+  {
+    id: 'G87yNMcTzQoP5LhXu3JvKwRs9TzxWVcPaMnK48HyXZAB',
+    identity: 'UnknownA',
+    title: 'Meeting Reminder',
+    contents: 'Hey, are you coming to the meeting later?',
+    status: 'unread',
+  },
+  {
+    id: 'P9XtRcZoJ57LyNMqTWvK83JhXMcH6PaKvW48BZXYMNQA',
+    identity: 'UnknownB',
+    title: 'Report Request',
+    contents: 'Can you send me the report by noon?',
+    status: 'unread',
+  },
+  {
+    id: 'K7XLvMTqP58ZNRJ9yW3H5McKwJoXPaTXV64ZYMNQBCA',
+    identity: 'UnknownC',
+    title: 'Arrival Update',
+    contents: 'I’ll be there in 10 minutes.',
+    status: 'read',
+  },
+  {
+    id: 'T9ZNRJ8yMc5KLW3XPqXVT64BZYMJPoWA7vNM48KXYZBC',
+    identity: 'UnknownD',
+    title: 'Weekend Plans',
+    contents: 'Do you have any plans for the weekend?',
+    status: 'unread',
+  },
+  {
+    id: 'M5XL8NRJ9yTZJoW3XPoVqKM64ZYBCA7vXT64XNYKMJQB',
+    identity: 'UnknownE',
+    title: 'Lunch Invitation',
+    contents: 'Let’s grab lunch together tomorrow.',
+    status: 'read',
+  },
+  {
+    id: 'X7vNM48YZKMJQBCA9yXLqNRJ5PoW3ZT64XVT64BMNKWA',
+    identity: 'UnknownF',
+    title: 'Project Assistance',
+    contents: 'I need your help with this project.',
+    status: 'unread',
+  },
+  {
+    id: 'N64XT64BM9yXLJPoWA7vKMZRNM48YZKXYZABC5VT9MoN',
+    identity: 'UnknownG',
+    title: 'Call Request',
+    contents: 'Can you call me when you’re free?',
+    status: 'unread',
+  },
+  {
+    id: 'X9yXL5KLZNRJPoW3XZKM64VqXT48BMN7vYZKXYZABCWN',
+    identity: 'UnknownH',
+    title: 'Gratitude Note',
+    contents: 'Thanks for your help earlier!',
+    status: 'read',
+  },
+];
