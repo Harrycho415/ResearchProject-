@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callock - Notifications Received</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <style>
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          #9333ea 0%,
+          #3b82f6 50%,
+          #06b6d4 100%
+        );
+      }
+      .menu-hover:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+      }
+      .notification-card {
+        transition: transform 0.2s ease;
+      }
+      .notification-card:hover {
+        transform: translateY(-2px);
+      }
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div class="flex min-h-screen">
+        <!-- Left Menu Bar (Same as profile page) -->
+        <div class="w-64 bg-gray-900 p-6 flex flex-col h-screen fixed">
+            <!-- Same menubar code as before -->
+                    <!-- Logo -->
+        <div class="flex items-center gap-3 mb-8">
+          <svg class="w-8 h-8 text-purple-500" viewBox="0 0 24 24" fill="none">
+            <path d="M13 10V3L4 14H7V21L16 10H13Z" fill="currentColor" />
+          </svg>
+          <span class="text-white text-xl font-semibold">Callock</span>
+        </div>
+
+        <!-- Search -->
+        <div class="relative mb-8">
+          <input
+            type="text"
+            placeholder="AI-powered search..."
+            class="w-full bg-gray-800 text-gray-300 rounded-lg py-2 px-4 text-sm focus:outline-none"
+          />
+          <i
+            data-lucide="search"
+            class="w-4 h-4 absolute right-3 top-2.5 text-gray-400"
+          ></i>
+        </div>
+
+        <!-- User Mini Profile -->
+        <div class="flex items-center gap-3 mb-8">
+          <div
+            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center"
+          >
+            <i data-lucide="user" class="w-6 h-6 text-gray-400"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-white">John</span>
+              <span class="text-green-500 text-sm">Verified</span>
+            </div>
+            <div class="text-gray-400 text-sm">Researcher</div>
+            <div class="text-gray-500 text-xs">0x1234...5678</div>
+          </div>
+        </div>
+
+        <!-- Menu Items -->
+        <nav class="flex-1 space-y-1">
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Dashboard</span>
+          </a>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Profile</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Research Hub</span>
+            <span
+              class="bg-purple-500 text-white text-xs px-2 py-1 rounded-full"
+              >New</span
+            >
+          </a>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Collaborations</span>
+          </a>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Community</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Web3 Wallet</span>
+            <span class="text-gray-400">2.5 ICP</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover bg-gray-800 rounded-lg"
+          >
+            <span class="text-lg">Notifications</span>
+            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full"
+              >3</span
+            >
+          </a>
+        </nav>
+
+        <!-- Bottom Items -->
+        <div class="mt-auto space-y-1">
+          <div class="flex items-center justify-between text-gray-300 p-3">
+            <span class="text-lg">Dark Mode</span>
+            <div class="w-12 h-6 bg-purple-500 rounded-full relative">
+              <div
+                class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"
+              ></div>
+            </div>
+          </div>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Help & AI Assistant</span>
+          </a>
+        </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 ml-64">
+
+
+    <!-- Main Content Area -->
+    <div class="p-6 gradient-bg">
+        <div class="max-w-4xl mx-auto">
+          
+<!-- Replace the Tabs and Filters section -->
+<div class="flex flex-col space-y-4 mb-8">
+
+<!-- Tabs -->
+<div class="flex space-x-4">
+  <a
+    href="#"
+    class="bg-white text-gray-900 px-8 py-2 rounded-lg flex items-center space-x-2"
+  >
+    <span>Sent</span>
+    <span class="bg-gray-200 text-xs px-2 py-0.5 rounded-full">4</span>
+  </a>
+  <a
+    href="#"
+    class="bg-white/20 text-white px-8 py-2 rounded-lg flex items-center space-x-2"
+  >
+    <span>Received</span>
+    <span class="bg-purple-500 text-xs px-2 py-0.5 rounded-full">2</span>
+  </a>
+</div>
+
+
+  <!-- Filters -->
+  <div class="flex space-x-4">
+    <button class="bg-white/20 text-white px-6 py-2 rounded-lg">
+      Sort by Date
+    </button>
+    <button class="bg-white/20 text-white px-6 py-2 rounded-lg">Status</button>
+    <button class="bg-white/20 text-white px-6 py-2 rounded-lg">
+      Dataset Type
+    </button>
+  </div>
+</div>
+
+    <!-- Stats Overview -->
+    <div class="grid grid-cols-4 gap-4 mb-6">
+        <div class="glassmorphism rounded-lg p-4 text-white">
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="inbox" class="w-5 h-5"></i>
+                <span>New Requests</span>
+            </div>
+            <span class="text-2xl font-bold">12</span>
+        </div>
+        <div class="glassmorphism rounded-lg p-4 text-white">
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+                <span>Approved</span>
+            </div>
+            <span class="text-2xl font-bold">45</span>
+        </div>
+        <div class="glassmorphism rounded-lg p-4 text-white">
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="x-circle" class="w-5 h-5 text-red-400"></i>
+                <span>Rejected</span>
+            </div>
+            <span class="text-2xl font-bold">8</span>
+        </div>
+        <div class="glassmorphism rounded-lg p-4 text-white">
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="award" class="w-5 h-5 text-yellow-400"></i>
+                <span>Success Rate</span>
+            </div>
+            <span class="text-2xl font-bold">80%</span>
+        </div>
+    </div>
+
+<!-- Notification Cards -->
+<div class="space-y-4">
+    <!-- Card 1 -->
+    <div class="bg-gray-900/80 backdrop-blur rounded-xl p-6">
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-purple-900/30 rounded-full flex items-center justify-center">
+                <span class="text-purple-400 font-medium text-lg">MA</span>
+            </div>
+            
+            <div class="flex-grow">
+                <div class="flex items-center gap-3 mb-2">
+                    <h3 class="text-white font-medium">Neural Network Hub Dataset</h3>
+                    <span class="text-yellow-400 text-sm bg-yellow-400/10 px-2 py-0.5 rounded-full">Pending</span>
+                </div>
+
+                <div class="text-gray-100 mb-1">Sent to: Dr. Maria Anderson</div>
+                <div class="text-gray-400 mb-4">Purpose: Deep learning architecture comparison study</div>
+
+                <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4"></i>
+                        Sent 2 hours ago
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="timer" class="w-4 h-4"></i>
+                        Est. Response: 24h
+                    </div>
+                    <div class="text-purple-400 flex items-center gap-2 cursor-pointer">
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                        View Details
+                    </div>
+                </div>
+
+                <button class="px-5 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors">
+                    Withdraw Request
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-gray-900/80 backdrop-blur rounded-xl p-6">
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center">
+                <span class="text-blue-400 font-medium text-lg">RC</span>
+            </div>
+            
+            <div class="flex-grow">
+                <div class="flex items-center gap-3 mb-2">
+                    <h3 class="text-white font-medium">Blockchain Data Analysis Set</h3>
+                    <span class="text-green-400 text-sm bg-green-400/10 px-2 py-0.5 rounded-full">Approved</span>
+                </div>
+
+                <div class="text-gray-100 mb-1">Sent to: Dr. Robert Chen</div>
+                <div class="text-gray-400 mb-4">Purpose: DeFi transaction pattern analysis</div>
+
+                <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4"></i>
+                        Sent 1 day ago
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i>
+                        Approved 2h ago
+                    </div>
+                    <div class="text-purple-400 flex items-center gap-2 cursor-pointer">
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                        Access Data
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-gray-900/80 backdrop-blur rounded-xl p-6">
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-green-900/30 rounded-full flex items-center justify-center">
+                <span class="text-green-400 font-medium text-lg">SK</span>
+            </div>
+            
+            <div class="flex-grow">
+                <div class="flex items-center gap-3 mb-2">
+                    <h3 class="text-white font-medium">Climate Dataset 2024</h3>
+                    <span class="text-yellow-400 text-sm bg-yellow-400/10 px-2 py-0.5 rounded-full">Pending</span>
+                </div>
+
+                <div class="text-gray-100 mb-1">Sent to: Dr. Sarah Kim</div>
+                <div class="text-gray-400 mb-4">Purpose: Global temperature analysis</div>
+
+                <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4"></i>
+                        Sent 4 hours ago
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="timer" class="w-4 h-4"></i>
+                        Est. Response: 48h
+                    </div>
+                    <div class="text-purple-400 flex items-center gap-2 cursor-pointer">
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                        View Details
+                    </div>
+                </div>
+
+                <button class="px-5 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors">
+                    Withdraw Request
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-gray-900/80 backdrop-blur rounded-xl p-6">
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-red-900/30 rounded-full flex items-center justify-center">
+                <span class="text-red-400 font-medium text-lg">JL</span>
+            </div>
+            
+            <div class="flex-grow">
+                <div class="flex items-center gap-3 mb-2">
+                    <h3 class="text-white font-medium">Medical Imaging Dataset</h3>
+                    <span class="text-red-400 text-sm bg-red-400/10 px-2 py-0.5 rounded-full">Rejected</span>
+                </div>
+
+                <div class="text-gray-100 mb-1">Sent to: Dr. James Lee</div>
+                <div class="text-gray-400 mb-4">Purpose: Healthcare ML model training</div>
+
+                <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4"></i>
+                        Sent 3 days ago
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="x-circle" class="w-4 h-4 text-red-400"></i>
+                        Rejected: Data sensitivity
+                    </div>
+                    <div class="text-purple-400 flex items-center gap-2 cursor-pointer">
+                        <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                        Try Similar Datasets
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
