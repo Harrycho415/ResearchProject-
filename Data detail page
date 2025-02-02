@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChainScholar - Dataset Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #9333ea 0%, #3b82f6 50%, #06b6d4 100%);
+        }
+        .menu-hover:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div class="flex min-h-screen">
+        <!-- Same menubar as before -->
+        <div class="w-64 bg-gray-900 p-6 flex flex-col h-screen fixed">
+            <!-- Previous menubar code -->
+             <!-- Logo -->
+        <div class="flex items-center gap-3 mb-8">
+          <svg class="w-8 h-8 text-purple-500" viewBox="0 0 24 24" fill="none">
+            <path d="M13 10V3L4 14H7V21L16 10H13Z" fill="currentColor" />
+          </svg>
+          <span class="text-white text-xl font-semibold">ChainScholar</span>
+        </div>
+
+        <!-- Search -->
+        <div class="relative mb-8">
+          <input
+            type="text"
+            placeholder="AI-powered search..."
+            class="w-full bg-gray-800 text-gray-300 rounded-lg py-2 px-4 text-sm focus:outline-none"
+          />
+          <i
+            data-lucide="search"
+            class="w-4 h-4 absolute right-3 top-2.5 text-gray-400"
+          ></i>
+        </div>
+
+        <!-- User Mini Profile -->
+        <div class="flex items-center gap-3 mb-8">
+          <div
+            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center"
+          >
+            <i data-lucide="user" class="w-6 h-6 text-gray-400"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-white">John</span>
+              <span class="text-green-500 text-sm">Verified</span>
+            </div>
+            <div class="text-gray-400 text-sm">Researcher</div>
+            <div class="text-gray-500 text-xs">0x1234...5678</div>
+          </div>
+        </div>
+
+        <!-- Menu Items -->
+        <nav class="flex-1 space-y-1">
+          <a
+            href="#"
+            class="flex items-center text-gray-300 p-3 menu-hover bg-gray-800 rounded-lg"
+          >
+            <span class="text-lg">Dashboard</span>
+          </a>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Profile</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Research Hub</span>
+            <span
+              class="bg-purple-500 text-white text-xs px-2 py-1 rounded-full"
+              >New</span
+            >
+          </a>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Collaborations</span>
+          </a>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Community</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Web3 Wallet</span>
+            <span class="text-gray-400">2.5 ICP</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Notifications</span>
+            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full"
+              >3</span
+            >
+          </a>
+        </nav>
+
+        <!-- Bottom Items -->
+        <div class="mt-auto space-y-1">
+          <div class="flex items-center justify-between text-gray-300 p-3">
+            <span class="text-lg">Dark Mode</span>
+            <div class="w-12 h-6 bg-purple-500 rounded-full relative">
+              <div
+                class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"
+              ></div>
+            </div>
+          </div>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Help & AI Assistant</span>
+          </a>
+        </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 ml-64">
+            <!-- Header Section -->
+            <div class="gradient-bg py-6">
+                <div class="max-w-5xl mx-auto px-6">
+                    <div class="flex items-center justify-between mb-8">
+                        <a href="#" class="flex items-center text-white gap-2 hover:text-white/80">
+                            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                            <span>Back to Dashboard</span>
+                        </a>
+                        <div class="flex items-center gap-4">
+                            <button class="text-white bg-white/10 px-4 py-2 rounded-lg flex items-center gap-2">
+                                <i data-lucide="heart" class="w-5 h-5"></i>
+                                Save Dataset
+                            </button>
+                            <button class="text-white bg-white/10 px-4 py-2 rounded-lg">
+                                <i data-lucide="more-vertical" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-5xl mx-auto px-6 py-8">
+                <!-- Dataset Overview Section -->
+                <div class="bg-gray-800 rounded-2xl p-8 mb-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex gap-6">
+                            <!-- Provider Profile -->
+                            <div class="w-16 h-16 bg-purple-600/20 rounded-full flex items-center justify-center">
+                                <span class="text-purple-400 text-xl font-semibold">JD</span>
+                            </div>
+                            <!-- Dataset Title & Info -->
+                            <div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h1 class="text-2xl text-white font-semibold">Neural Network Architecture Dataset</h1>
+                                    <span class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm">📊 CSV</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="flex items-center gap-2">
+                                        <img src="https://example.com/provider-avatar.jpg" alt="Provider" class="w-6 h-6 rounded-full">
+                                        <span class="text-gray-300">Dr. John Doe</span>
+                                    </div>
+                                    <span class="bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full text-xs">✅ Web3 Verified</span>
+                                    <span class="text-gray-400 text-sm">Trust Score: 95</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Quick Stats -->
+                        <div class="flex items-center gap-6 text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="eye" class="w-5 h-5"></i>
+                                <span>1.5k Views</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="download" class="w-5 h-5"></i>
+                                <span>342 Downloads</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="star" class="w-5 h-5"></i>
+                                <span>4.8 Rating</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI & Blockchain Insights -->
+                    <div class="grid grid-cols-3 gap-6 mb-8">
+                        <div class="bg-gray-700/50 rounded-xl p-4">
+                            <div class="flex items-center gap-2 text-gray-300 mb-2">
+                                <i data-lucide="trending-up" class="w-5 h-5"></i>
+                                <span>Impact Score</span>
+                            </div>
+                            <div class="text-2xl font-semibold text-white mb-1">92/100</div>
+                            <p class="text-sm text-gray-400">Based on citations & usage</p>
+                        </div>
+                        <div class="bg-gray-700/50 rounded-xl p-4">
+                            <div class="flex items-center gap-2 text-gray-300 mb-2">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                <span>Blockchain Verified</span>
+                            </div>
+                            <div class="text-sm text-gray-400">Hash:</div>
+                            <div class="text-sm text-purple-400 truncate">0x1a2b...3c4d</div>
+                        </div>
+                        <div class="bg-gray-700/50 rounded-xl p-4">
+                            <div class="flex items-center gap-2 text-gray-300 mb-2">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                                <span>Avg. Response Time</span>
+                            </div>
+                            <div class="text-2xl font-semibold text-white mb-1">24h</div>
+                            <p class="text-sm text-gray-400">For data requests</p>
+                        </div>
+                    </div>
+
+                    <!-- Dataset Metadata -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-gray-400 text-sm mb-1">Published Date</div>
+                                <div class="text-white">January 1, 2025</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 text-sm mb-1">File Size & Format</div>
+                                <div class="text-white">30MB • CSV</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 text-sm mb-1">Data Collection Method</div>
+                                <div class="text-white">Machine Learning Training Logs</div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-gray-400 text-sm mb-1">License</div>
+                                <div class="text-white">MIT License</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 text-sm mb-1">Preprocessing Level</div>
+                                <div class="text-white">Cleaned & Normalized</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 text-sm mb-1">Tags</div>
+                                <div class="flex gap-2">
+                                    <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-sm">AI</span>
+                                    <span class="bg-green-500/20 text-green-300 px-2 py-1 rounded-full text-sm">ML Models</span>
+                                    <span class="bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full text-sm">Research</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description & Use Cases -->
+                <div class="bg-gray-800 rounded-2xl p-8 mb-8">
+                    <h2 class="text-xl text-white font-semibold mb-4">About This Dataset</h2>
+                    <div class="text-gray-300 space-y-4">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+
+                    <!-- Use Cases -->
+                    <h3 class="text-lg text-white font-semibold mt-6 mb-4">Suggested Use Cases</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-700/50 rounded-xl p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="brain" class="w-5 h-5 text-purple-400"></i>
+                                <span class="text-white">AI Model Training</span>
+                            </div>
+                            <p class="text-gray-400 text-sm">Perfect for training neural networks in medical imaging</p>
+                        </div>
+                        <div class="bg-gray-700/50 rounded-xl p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="microscope" class="w-5 h-5 text-blue-400"></i>
+                                <span class="text-white">Research Analysis</span>
+                            </div>
+                            <p class="text-gray-400 text-sm">Benchmark different ML architectures</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Request Access Section -->
+                <div class="bg-gray-800 rounded-2xl p-8 mb-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-xl text-white font-semibold mb-2">Request Dataset Access</h2>
+                            <p class="text-gray-400">Please provide details about your intended use</p>
+                        </div>
+                        <button class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            Request Data
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gray-700/50 rounded-xl p-4">
+                            <h3 class="text-white font-medium mb-2">Requirements</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i>
+                                    <span>Verified Researcher Status</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i>
+                                    <span>Connected Web3 Wallet</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i>
+                                    <span>Research Purpose Statement</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-700/50 rounded-xl p-4">
+                            <h3 class="text-white font-medium mb-2">Access Type</h3>
+                            <div class="space-y-2 text-gray-300">
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="unlock" class="w-4 h-4 text-purple-400"></i>
+                                    <span>Smart Contract Protected</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="clock" class="w-4 h-4 text-blue-400"></i>
+                                    <span>7-day Processing Time</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Recommendations -->
+                <div>
+                    <h2 class="text-xl text-white font-semibold mb-6">Similar Datasets</h2>
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Similar Dataset Card -->
+                        <div class="bg-gray-800 rounded-xl p-4 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center">
+                                <i data-lucide="database" class="w-6 h-6 text-blue-400"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <h3 class="text-white font-medium">Medical Imaging Dataset</h3>
+                                    <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded-full">98% Match</span>
+                                </div>
+                                <p class="text-gray-400 text-sm">Similar architecture, different domain</p>
+                            </div>
+                        </div>
+
+                        <!-- Add more similar dataset cards -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script
