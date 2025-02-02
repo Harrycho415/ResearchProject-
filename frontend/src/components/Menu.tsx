@@ -16,14 +16,8 @@ export default function Menu({ jwtObject }) {
 
   return (
     <div>
-      {/* Header */}
-      <header className="fixed top-0 left-0 w-full h-[72px] bg-gray-800 text-white z-50 flex items-center px-4 shadow-md">
-        <BeakerIcon className="w-6 h-6 text-blue-500 mr-2" />
-        <h1 className="text-lg font-bold">My Application</h1>
-      </header>
-
       {/* Sidebar */}
-      <div className="fixed top-[72px] left-0 w-1/4 max-w-[378px] h-[calc(100vh-72px)] bg-black text-white flex flex-col z-40">
+      <div className="fixed left-0 w-1/4 max-w-[378px] h-screen bg-black text-white flex flex-col z-40">
         <div className="h-[72px] flex items-center justify-between px-4">
           <Link href="/">
             <LockClosedIcon className="w-14 h-14"></LockClosedIcon>
@@ -31,10 +25,14 @@ export default function Menu({ jwtObject }) {
           <Bars3Icon className="w-[46px] h-[46px]"></Bars3Icon>
         </div>
         <div className="h-[100px] flex items-center">
-          <UserCircleIcon className="w-[40px] h-[40px] ml-[20px] mr-[11px]"></UserCircleIcon>
+          <img
+            src="/profile.png"
+            alt="loading..."
+            className="w-[80px]  -translate-y-[12px] "
+          />
           {jwtObject ? (
             <div>
-              <p>Profile</p>
+              <p>poqopo</p>
               <p>{jwtObject?.executor_public_key.slice(0, 20)}...</p>
             </div>
           ) : (

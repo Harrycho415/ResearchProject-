@@ -9,16 +9,7 @@ export default function PostList({ contents }) {
   return (
     <div className="w-full h-[80vh] overflow-y-auto bg-white text-black">
       {contents ? (
-        contents.map((post, index) => (
-          <Card
-            key={post.id}
-            id={post.id}
-            dataName={post.dataName}
-            dataDescription={post.dataDescription}
-            viewcount={post.viewcount}
-            className={`${index % 2 === 0 ? 'bg-blue' : 'bg-gray-100'}`}
-          />
-        ))
+        contents.map((post, index) => <Card key={post.id} post={post} />)
       ) : (
         <p>Loading...</p>
       )}
