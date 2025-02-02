@@ -1,6 +1,6 @@
 // DefaultLayout.tsx
 import { useRouter } from 'next/router';
-import Menu from './Menu';
+import Sidebar from './Sidebar';
 import React from 'react';
 import { useEffect } from 'react';
 import { getJWTObject } from '../utils/storage';
@@ -18,7 +18,7 @@ export default function DefaultLayout({
 
   return (
     <div className="">
-      <Menu jwtObject={jwtObject}></Menu>
+      <Sidebar></Sidebar>
       <div className="w-full h-full ">{children}</div>
     </div>
   );
