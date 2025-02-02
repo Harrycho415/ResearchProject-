@@ -6,7 +6,7 @@ export default function Index() {
   const router = useRouter();
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-900 text-white pl-[max(378px,25%)]">
+    <div className="flex items-center justify-center h-screen text-white pl-[max(378px,25%)]">
       <div className="text-center">
         <div className="mb-4">
           <ClientLogin

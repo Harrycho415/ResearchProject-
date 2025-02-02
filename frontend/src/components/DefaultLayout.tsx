@@ -17,7 +17,7 @@ export default function DefaultLayout({
   }, [children]);
 
   return (
-    <div className="">
+    <div className="bg-gradient-to-tr from-purple-600 via-blue-500 to-cyan-400">
       <Sidebar></Sidebar>
       <div className="w-full h-full ">{children}</div>
     </div>
