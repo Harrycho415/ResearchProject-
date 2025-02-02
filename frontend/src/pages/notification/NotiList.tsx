@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card'; // Import the new NotificationCard component
+import Card from './Card'; // Import the NotificationCard component
 
 export default function NotiList({ contents }) {
   return (
@@ -8,12 +8,14 @@ export default function NotiList({ contents }) {
         contents.map((noti) => (
           <Card
             key={noti.id} // Ensure the notification has a unique ID for key prop
-            initials={noti.initials} // Initials to display in the card
+            initials={noti.initials || 'N/A'} // Fallback to 'N/A' if initials is missing
             name={noti.name} // Name of the researcher
+            role={noti.role} // Role of the researcher (e.g., "Verified Researcher")
             trustScore={noti.trustScore} // Trust score for the researcher
-            requestTime={noti.requestTime} // Time of the request
-            requestDetails={noti.requestDetails} // Details of the request
+            datasetName={noti.datasetName} // Name of the dataset requested
             purpose={noti.purpose} // Purpose of the request
+            requestTime={noti.requestTime} // Time of the request
+            detailsLink={noti.detailsLink} // Link to view request details
             onApprove={() => console.log(`Approved: ${noti.id}`)} // Action for approve
             onReject={() => console.log(`Rejected: ${noti.id}`)} // Action for reject
           />

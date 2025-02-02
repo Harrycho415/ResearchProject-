@@ -13,15 +13,10 @@ import {
   Mic,
 } from 'lucide-react';
 import SortButton from '../../components/dashboard/SortButton';
+import NotiList from './NotiList';
 
-export default function Dashboard() {
+export default function notification() {
   const [datasets, setDatasets] = useState([]);
-
-  // Simulate fetching data from a database
-  useEffect(() => {
-    // In a real app, replace the below with an API call to fetch the data
-    setDatasets(notiExample); // Mock data loading
-  }, []);
 
   return (
     <div className="bg-gray-900">
@@ -95,10 +90,12 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
+              <div className="text-gray-400 text-sm">Researcher</div>
+              <div className="text-gray-500 text-xs">0x1234...5678</div>
             </div>
           </div>
           {/* Main Content Area */}
-          <div className="p-6 bg-gray-900">
+          <div className="p-6 gradient-bg">
             <div className="max-w-4xl mx-auto">
               {/* Data Table */}
               <div className="bg-gray-800 rounded-lg overflow-hidden">
@@ -174,6 +171,49 @@ export default function Dashboard() {
                   </div>
                 ))}
               </div>
+              {/* Stats Overview */}
+              <div className="grid grid-cols-4 gap-4 mb-6">
+                <div className="glassmorphism rounded-lg p-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <i data-lucide="inbox" className="w-5 h-5"></i>
+                    <span>New Requests</span>
+                  </div>
+                  <span className="text-2xl font-bold">12</span>
+                </div>
+                <div className="glassmorphism rounded-lg p-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <i
+                      data-lucide="check-circle"
+                      className="w-5 h-5 text-green-400"
+                    ></i>
+                    <span>Approved</span>
+                  </div>
+                  <span className="text-2xl font-bold">45</span>
+                </div>
+                <div className="glassmorphism rounded-lg p-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <i
+                      data-lucide="x-circle"
+                      className="w-5 h-5 text-red-400"
+                    ></i>
+                    <span>Rejected</span>
+                  </div>
+                  <span className="text-2xl font-bold">8</span>
+                </div>
+                <div className="glassmorphism rounded-lg p-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <i
+                      data-lucide="award"
+                      className="w-5 h-5 text-yellow-400"
+                    ></i>
+                    <span>Trust Score</span>
+                  </div>
+                  <span className="text-2xl font-bold">92%</span>
+                </div>
+              </div>
+              {/* Notification Cards */}
+              <NotiList contents={notiExample} />
+              {/* Add more notification cards here */}
             </div>
           </div>
         </div>

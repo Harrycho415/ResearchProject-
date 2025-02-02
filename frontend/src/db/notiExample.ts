@@ -1,37 +1,49 @@
-// Example mock data for datasets and users
-export const notiExample = [
+// db.js (Example Data)
+const sampleNotifications = [
   {
     id: 1,
-    providerInitials: 'MA',
-    providerName: 'Maria Anderson',
+    initials: 'JD',
+    name: 'Dr. John Doe',
+    role: 'Verified Researcher',
     trustScore: 95,
-    datasetName: 'Neural Network Architecture Data',
-    datasetTags: ['AI', 'Deep Learning'],
-    description:
-      'Comprehensive performance analysis of various neural network architectures...',
-    engagement: { views: 2300, likes: 456, comments: 89 },
+    datasetName: 'Neural Network Architecture Dataset',
+    purpose: 'Comparative analysis of deep learning models for medical imaging',
+    requestTime: '2 hours ago',
+    detailsLink: 'View Request Details',
   },
   {
     id: 2,
-    providerInitials: 'RJ',
-    providerName: 'Dr. Robert Johnson',
-    trustScore: 88,
-    datasetName: 'Blockchain Transaction Patterns',
-    datasetTags: ['Blockchain', 'Analytics'],
-    description:
-      'Analysis of transaction patterns and network effects in Web3 systems...',
-    engagement: { views: 1800, likes: 123, comments: 56 },
+    initials: 'AB',
+    name: 'Alice Brown',
+    role: 'Researcher',
+    trustScore: 89,
+    datasetName: 'Quantum Physics Dataset',
+    purpose: 'Study of quantum entanglement experiments',
+    requestTime: '5 hours ago',
+    detailsLink: 'View Request Details',
   },
   {
     id: 3,
-    providerInitials: 'SK',
-    providerName: 'Dr. Sarah Kim',
+    initials: 'TS',
+    name: 'Dr. Tina Smith',
+    role: 'Verified Researcher',
     trustScore: 92,
-    datasetName: 'Climate Change Impact Data',
-    datasetTags: ['Environment', 'Data Science'],
-    description:
-      'Global dataset analyzing climate change patterns and environmental impacts...',
-    engagement: { views: 3100, likes: 678, comments: 123 },
+    datasetName: 'Climate Change Data',
+    purpose: 'Analysis of climate data trends',
+    requestTime: '1 day ago',
+    detailsLink: 'View Request Details',
   },
-  // Add more datasets as needed
+  {
+    id: 4,
+    initials: 'KG',
+    name: 'Kevin Green',
+    role: 'Researcher',
+    trustScore: 87,
+    datasetName: 'Genetic Research Data',
+    purpose: 'Genetic studies on disease patterns',
+    requestTime: '3 days ago',
+    detailsLink: 'View Request Details',
+  },
 ];
+
+export default sampleNotifications;
