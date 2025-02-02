@@ -2,6 +2,17 @@ import React from 'react';
 import SortButton from '../../components/dashboard/sortButton';
 import { dashboardExample } from '../../db/dashboardExample';
 import DashboardList from './DashboardList';
+import {
+  Database,
+  Users,
+  TrendingUp,
+  ShieldCheck,
+  Eye,
+  Heart,
+  MessageSquare,
+  Search,
+  Mic,
+} from 'lucide-react';
 
 export default function Dashboard() {
   console.log(dashboardExample);
@@ -15,17 +26,14 @@ export default function Dashboard() {
             {/* Main Search */}
             <div className="max-w-4xl mx-auto">
               <div className="relative mb-6">
-                <i
-                  data-lucide="search"
-                  className="w-5 h-5 absolute left-4 top-3.5 text-gray-400"
-                ></i>
+                <Search className="w-5 h-5 absolute left-4 top-3.5 text-gray-400" />
                 <input
                   type="text"
                   placeholder="Search for datasets, papers, or researchers..."
                   className="w-full bg-white rounded-lg pl-12 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 />
                 <button className="absolute right-3 top-2 bg-purple-500 text-white px-4 py-1.5 rounded-md flex items-center gap-2">
-                  <i data-lucide="mic" className="w-4 h-4"></i>
+                  <Mic className="w-4 h-4" />
                   <span>Voice Search</span>
                 </button>
               </div>
@@ -44,32 +52,40 @@ export default function Dashboard() {
               {/* Stats Overview */}
               <div className="grid grid-cols-4 gap-4 max-w-4xl mx-auto">
                 <div className="glassmorphism rounded-lg p-4 text-white">
-                  <div className="flex items-center gap-3 mb-2">
-                    <i data-lucide="database" className="w-5 h-5"></i>
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <Database className="w-5 h-5" />
                     <span className="text-sm">Total Datasets</span>
                   </div>
-                  <span className="text-2xl font-bold">1,234</span>
+                  <div className="w-full text-2xl font-bold text-center">
+                    1,234
+                  </div>
                 </div>
                 <div className="glassmorphism rounded-lg p-4 text-white">
-                  <div className="flex items-center gap-3 mb-2">
-                    <i data-lucide="users" className="w-5 h-5"></i>
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <Users className="w-5 h-5" />
                     <span className="text-sm">Active Researchers</span>
                   </div>
-                  <span className="text-2xl font-bold">456</span>
+                  <div className="w-full text-2xl font-bold text-center">
+                    456
+                  </div>
                 </div>
                 <div className="glassmorphism rounded-lg p-4 text-white">
-                  <div className="flex items-center gap-3 mb-2">
-                    <i data-lucide="trending-up" className="w-5 h-5"></i>
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <TrendingUp className="w-5 h-5" />
                     <span className="text-sm">Growth Rate</span>
                   </div>
-                  <span className="text-2xl font-bold">+27%</span>
+                  <div className="w-full text-2xl font-bold text-center">
+                    +27%
+                  </div>
                 </div>
                 <div className="glassmorphism rounded-lg p-4 text-white">
-                  <div className="flex items-center gap-3 mb-2">
-                    <i data-lucide="shield-check" className="w-5 h-5"></i>
-                    <span className="text-sm">Verified Data</span>
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <ShieldCheck className="w-5 h-5" />
+                    <span className="text-sm">Growth Rate</span>
                   </div>
-                  <span className="text-2xl font-bold">89%</span>
+                  <div className="w-full text-2xl font-bold text-center">
+                    89%
+                  </div>
                 </div>
               </div>
             </div>
@@ -81,7 +97,7 @@ export default function Dashboard() {
               {/* Data Table */}
               <div className="bg-gray-800 rounded-lg overflow-hidden">
                 {/* Table Header */}
-                <div className="grid grid-cols-[auto_1fr_2fr_auto] gap-4 p-4 bg-gray-700 text-gray-300 text-sm font-medium">
+                <div className="grid grid-cols-[1fr_1fr_2fr_1fr] gap-4 p-4 bg-gray-700 text-gray-300 text-sm font-medium">
                   <div>Provider</div>
                   <div>Dataset</div>
                   <div>Description</div>
@@ -89,7 +105,8 @@ export default function Dashboard() {
                 </div>
 
                 {/* Entry 1 */}
-                {/* <div className="grid grid-cols-[auto_1fr_2fr_auto] gap-4 p-4 border-t border-gray-700 table-row-hover">
+
+                <div className="grid grid-cols-[1fr_1fr_2fr_1fr] gap-4 p-4 border-t border-gray-700 table-row-hover">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-medium">
                       MA
@@ -124,15 +141,15 @@ export default function Dashboard() {
                   </div>
                   <div className="flex items-center gap-4 text-gray-400">
                     <div className="flex items-center gap-1">
-                      <i data-lucide="eye" className="w-4 h-4"></i>
+                      <Eye className="w-4 h-4" />
                       <span className="text-sm">2.3k</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <i data-lucide="heart" className="w-4 h-4"></i>
+                      <Heart className="w-4 h-4" />
                       <span className="text-sm">456</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <i data-lucide="message-square" className="w-4 h-4"></i>
+                      <MessageSquare className="w-4 h-4" />
                       <span className="text-sm">89</span>
                     </div>
                   </div>
