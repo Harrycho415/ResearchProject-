@@ -8,24 +8,7 @@ export default function PostsList({ contents }) {
 
   return (
     <div className="w-full bg-white text-black">
-      {contents ? (
-        contents.map((posts) => (
-          <Data
-            key={posts.id}
-            username={posts.username}
-            title={posts.title}
-            publishDate={posts.publishDate}
-            fileSize={posts.fileSize}
-            description={posts.description}
-            collectionMethod={posts.collectionMethod}
-            viewCount={posts.viewCount}
-            downloadCount={posts.downloadCount}
-            id={posts.id}
-          />
-        ))
-      ) : (
-        <p>Loading...</p>
-      )}
+      {contents ? <Data contents={contents} /> : <p>Loading...</p>}
     </div>
   );
 }

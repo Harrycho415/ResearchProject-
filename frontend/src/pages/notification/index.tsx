@@ -10,7 +10,7 @@ export default function Index() {
   const [selected, setSelected] = useState('sent'); // 초기 상태는 'sent'
 
   return (
-    <div className="h-screen bg-gray-900 text-white pl-[max(378px,25%)]">
+    <div className="h-screen bg-gray-900 text-white pl-[min(378px,25%)]">
       <div className="py-[100px] w-2/3 mx-auto">
         <ToggleButton
           selected={selected}
