@@ -3,7 +3,7 @@ import Card from './Card'; // Import the NotificationCard component
 
 export default function NotiList({ contents }) {
   return (
-    <div className="w-full bg-white text-black">
+    <div className="flex flex-col w-full text-black gap-y-4">
       {contents && contents.length > 0 ? (
         contents.map((noti) => (
           <Card

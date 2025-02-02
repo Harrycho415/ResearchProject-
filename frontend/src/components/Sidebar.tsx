@@ -1,7 +1,27 @@
 import { Search, User } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 const Sidebar = () => {
+  const router = useRouter();
+  const [activeMenu, setActiveMenu] = useState('');
+
+  useEffect(() => {
+    if (router.pathname) {
+      setActiveMenu(router.pathname);
+    }
+  }, [router.pathname]); // ✅ router.pathname이 변경될 때 실행
+
+  const menuItems = [
+    { name: 'Dashboard', path: '/dashboard' },
+    { name: 'Profile', path: '/profile' },
+    { name: 'Research Hub', path: '/researchhub', badge: 'New' },
+    { name: 'Collaborations', path: '/collaboration' },
+    { name: 'Community', path: '/community' },
+    { name: 'Notifications', path: '/notification', badge: '3' },
+  ];
+
   return (
     <div className="w-64 bg-gray-900 p-6 flex flex-col h-screen fixed">
       {/* Logo */}
@@ -43,48 +63,24 @@ const Sidebar = () => {
 
       {/* Menu Items */}
       <nav className="flex-1 space-y-1">
-        <Link
-          href="/dashboard"
-          className="flex items-center text-gray-300 p-3 menu-hover"
-        >
-          <span className="text-lg">Dashboard</span>
-        </Link>
-        <Link
-          href="/mypage"
-          className="flex items-center text-gray-300 p-3 menu-hover bg-gray-800 rounded-lg"
-        >
-          <span className="text-lg">Profile</span>
-        </Link>
-        <Link
-          href="/researchhub"
-          className="flex items-center justify-between text-gray-300 p-3 menu-hover"
-        >
-          <span className="text-lg">Research Hub</span>
-          <span className="bg-purple-500 text-white text-xs px-2 py-1 rounded-full">
-            New
-          </span>
-        </Link>
-        <Link
-          href="/collaboration"
-          className="flex items-center text-gray-300 p-3 menu-hover"
-        >
-          <span className="text-lg">Collaborations</span>
-        </Link>
-        <Link
-          href="/community"
-          className="flex items-center text-gray-300 p-3 menu-hover"
-        >
-          <span className="text-lg">Community</span>
-        </Link>
-        <Link
-          href="/notification"
-          className="flex items-center justify-between text-gray-300 p-3 menu-hover"
-        >
-          <span className="text-lg">Notifications</span>
-          <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full">
-            3
-          </span>
-        </Link>
+        {menuItems.map((item) => (
+          <Link
+            key={item.path}
+            href={item.path}
+            className={`flex items-center justify-between p-3 rounded-lg transition ${
+              activeMenu === item.path
+                ? 'bg-purple-600 text-white'
+                : 'text-gray-300 hover:bg-gray-800'
+            }`}
+          >
+            <span className="text-lg">{item.name}</span>
+            {item.badge && (
+              <span className="bg-purple-500 text-white text-xs px-2 py-1 rounded-full">
+                {item.badge}
+              </span>
+            )}
+          </Link>
+        ))}
       </nav>
 
       {/* Bottom Items */}
@@ -95,7 +91,10 @@ const Sidebar = () => {
             <div className="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
           </div>
         </div>
-        <a href="#" className="flex items-center text-gray-300 p-3 menu-hover">
+        <a
+          href="#"
+          className="flex items-center text-gray-300 p-3 hover:bg-gray-800 rounded-lg"
+        >
           <span className="text-lg">Help & AI Assistant</span>
         </a>
       </div>
