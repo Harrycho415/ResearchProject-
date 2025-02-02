@@ -1,4 +1,5 @@
 import React from 'react';
+import SortButton from '../../components/dashboard/sortButton';
 
 export default function Dashboard() {
   return (
@@ -28,18 +29,13 @@ export default function Dashboard() {
 
               {/* Filter Tags */}
               <div className="flex space-x-4 mb-6">
-                <button className="bg-white/20 text-white px-8 py-2 rounded-lg">
-                  Sort by Date
-                </button>
-                <button className="bg-white/20 text-white px-8 py-2 rounded-lg">
-                  Status
-                </button>
-                <button className="bg-white/20 text-white px-8 py-2 rounded-lg">
-                  Dataset Type
-                </button>
-                <button className="bg-purple-500 text-white px-8 py-2 rounded-lg">
-                  Blockchain Verified
-                </button>
+                <SortButton contents="Sort by Date"> </SortButton>
+                <SortButton contents="Status"> </SortButton>
+                <SortButton contents="Dataset Type"> </SortButton>
+                <SortButton
+                  isClicked={true}
+                  contents="Blockchain Verified"
+                ></SortButton>
               </div>
 
               {/* Stats Overview */}
