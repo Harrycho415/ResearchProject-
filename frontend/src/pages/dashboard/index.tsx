@@ -1,5 +1,7 @@
 import React from 'react';
-import SortButton from '../../components/dashboard/SortButton';
+import SortButton from '../../components/dashboard/sortButton';
+import { dashboardExample } from '../../db/dashboardExample';
+import DashboardList from './DashboardList';
 import {
   Database,
   Users,
@@ -13,6 +15,7 @@ import {
 } from 'lucide-react';
 
 export default function Dashboard() {
+  console.log(dashboardExample);
   return (
     <div className="bg-gray-900">
       <div className="flex min-h-screen">
@@ -102,6 +105,7 @@ export default function Dashboard() {
                 </div>
 
                 {/* Entry 1 */}
+
                 <div className="grid grid-cols-[1fr_1fr_2fr_1fr] gap-4 p-4 border-t border-gray-700 table-row-hover">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-medium">
@@ -149,7 +153,9 @@ export default function Dashboard() {
                       <span className="text-sm">89</span>
                     </div>
                   </div>
-                </div>
+                </div> */}
+
+                <DashboardList contents={dashboardExample} />
 
                 {/* Additional entries go here */}
               </div>
