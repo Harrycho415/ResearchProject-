@@ -1,15 +1,18 @@
+// Card.js
 import React from 'react';
 
-const NotificationCard = ({
-  name,
+export default function Card({
   initials,
+  name,
+  role,
   trustScore,
-  requestTime,
-  requestDetails,
+  datasetName,
   purpose,
+  requestTime,
+  detailsLink,
   onApprove,
   onReject,
-}) => {
+}) {
   return (
     <div className="bg-gray-800 rounded-lg p-4 notification-card">
       <div className="flex items-start gap-4">
@@ -24,14 +27,14 @@ const NotificationCard = ({
               <div className="flex items-center gap-2">
                 <h3 className="text-white font-medium">{name}</h3>
                 <span className="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">
-                  Verified Researcher
+                  {role}
                 </span>
                 <span className="text-xs text-gray-400">
                   Trust Score: {trustScore}
                 </span>
               </div>
               <p className="text-gray-300 text-sm mt-1">
-                Requesting: {requestDetails}
+                Requesting: {datasetName}
               </p>
               <p className="text-gray-400 text-sm mt-2">Purpose: {purpose}</p>
             </div>
@@ -42,11 +45,11 @@ const NotificationCard = ({
           <div className="flex items-center gap-4 mt-4">
             <div className="flex items-center gap-2 text-sm text-gray-400">
               <i data-lucide="clock" className="w-4 h-4"></i>
-              <span>{requestTime}</span>
+              <span>Requested {requestTime}</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-purple-400">
               <i data-lucide="link" className="w-4 h-4"></i>
-              <span>View Request Details</span>
+              <span>{detailsLink}</span>
             </div>
           </div>
           <div className="flex items-center gap-3 mt-4">
@@ -54,7 +57,8 @@ const NotificationCard = ({
               className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600"
               onClick={onApprove}
             >
-              <i data-lucide="check" className="w-4 h-4"></i> Approve
+              <i data-lucide="check" className="w-4 h-4"></i>
+              Approve
             </button>
             <button
               className="px-4 py-2 bg-gray-700 text-gray-300 rounded-md flex items-center gap-2 hover:bg-gray-600"
@@ -67,6 +71,4 @@ const NotificationCard = ({
       </div>
     </div>
   );
-};
-
-export default NotificationCard;
+}
