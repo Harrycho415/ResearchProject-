@@ -50,7 +50,7 @@ const Sidebar = () => {
           <span className="text-lg">Dashboard</span>
         </Link>
         <Link
-          href="/profile"
+          href="/mypage"
           className="flex items-center text-gray-300 p-3 menu-hover bg-gray-800 rounded-lg"
         >
           <span className="text-lg">Profile</span>
@@ -65,7 +65,7 @@ const Sidebar = () => {
           </span>
         </Link>
         <Link
-          href="/collaborations"
+          href="/collaboration"
           className="flex items-center text-gray-300 p-3 menu-hover"
         >
           <span className="text-lg">Collaborations</span>
@@ -77,7 +77,7 @@ const Sidebar = () => {
           <span className="text-lg">Community</span>
         </Link>
         <Link
-          href="/notifications"
+          href="/notification"
           className="flex items-center justify-between text-gray-300 p-3 menu-hover"
         >
           <span className="text-lg">Notifications</span>

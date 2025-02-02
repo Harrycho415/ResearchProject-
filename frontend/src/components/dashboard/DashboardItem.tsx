@@ -5,7 +5,7 @@ type SortButtonProps = {
   children?: React.ReactNode;
 };
 
-export default function DashboardItem({
+export default function SortButton({
   isClicked,
   sortView,
   contents,
