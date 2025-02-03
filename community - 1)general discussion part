@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResearchBlock - General Discussions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <style>
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          #9333ea 0%,
+          #3b82f6 50%,
+          #06b6d4 100%
+        );
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900">
+    <div class="flex min-h-screen">
+      <!-- Left Menu Bar -->
+      <div class="w-64 bg-gray-900 p-6 flex flex-col h-screen fixed">
+        <!-- Previous menubar code -->
+        <!-- Logo -->
+        <div class="flex items-center gap-3 mb-8">
+          <svg class="w-8 h-8 text-purple-500" viewBox="0 0 24 24" fill="none">
+            <path d="M13 10V3L4 14H7V21L16 10H13Z" fill="currentColor" />
+          </svg>
+          <span class="text-white text-xl font-semibold">Callock</span>
+        </div>
+
+        <!-- Search -->
+        <div class="relative mb-8">
+          <input
+            type="text"
+            placeholder="AI-powered search..."
+            class="w-full bg-gray-800 text-gray-300 rounded-lg py-2 px-4 text-sm focus:outline-none"
+          />
+          <i
+            data-lucide="search"
+            class="w-4 h-4 absolute right-3 top-2.5 text-gray-400"
+          ></i>
+        </div>
+
+        <!-- User Mini Profile -->
+        <div class="flex items-center gap-3 mb-8">
+          <div
+            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center"
+          >
+            <i data-lucide="user" class="w-6 h-6 text-gray-400"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-white">John</span>
+              <span class="text-green-500 text-sm">Verified</span>
+            </div>
+            <div class="text-gray-400 text-sm">Researcher</div>
+            <div class="text-gray-500 text-xs">0x1234...5678</div>
+          </div>
+        </div>
+
+        <!-- Menu Items -->
+        <nav class="flex-1 space-y-1">
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Dashboard</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center text-gray-300 p-3 menu-hover bg-gray-800 rounded-lg"
+          >
+            <span class="text-lg">Profile</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Research Hub</span>
+            <span
+              class="bg-purple-500 text-white text-xs px-2 py-1 rounded-full"
+              >New</span
+            >
+          </a>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Collaborations</span>
+          </a>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Community</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Web3 Wallet</span>
+            <span class="text-gray-400">2.5 ICP</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Notifications</span>
+            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full"
+              >3</span
+            >
+          </a>
+        </nav>
+
+        <!-- Bottom Items -->
+        <div class="mt-auto space-y-1">
+          <div class="flex items-center justify-between text-gray-300 p-3">
+            <span class="text-lg">Dark Mode</span>
+            <div class="w-12 h-6 bg-purple-500 rounded-full relative">
+              <div
+                class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"
+              ></div>
+            </div>
+          </div>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Help & AI Assistant</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="flex-1 ml-64">
+        <!-- Header Section -->
+        <div class="gradient-bg p-6">
+          <div class="max-w-6xl mx-auto">
+            <!-- Title and Create Button -->
+            <div class="flex justify-between items-center mb-6">
+              <h1 class="text-2xl text-white font-semibold">Community</h1>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Start Discussion
+              </button>
+            </div>
+
+            <!-- Search Bar with AI Integration -->
+            <div class="relative mb-6">
+              <input
+                type="text"
+                placeholder="Search discussions or ask a research question..."
+                class="w-full bg-white/10 text-white rounded-lg pl-12 pr-4 py-3 placeholder-white/50 focus:outline-none"
+              />
+              <i
+                data-lucide="search"
+                class="w-5 h-5 absolute left-4 top-3.5 text-white/50"
+              ></i>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex gap-4">
+              <button class="bg-purple-500 text-white px-4 py-2 rounded-lg">
+                General
+              </button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Research Topics
+              </button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Datasets
+              </button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Bounties
+              </button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Papers
+              </button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Collaboration Requests
+              </button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Technical Support
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="max-w-6xl mx-auto p-6">
+          <div class="grid grid-cols-3 gap-6">
+            <!-- Main Discussion Feed (2 columns) -->
+            <div class="col-span-2 space-y-6">
+              <!-- Discussion Categories -->
+              <div class="flex gap-2 mb-6 overflow-x-auto">
+                <button class="bg-gray-800 text-white px-4 py-2 rounded-lg">
+                  All
+                </button>
+                <button class="bg-gray-800 text-white px-4 py-2 rounded-lg">
+                  Latest
+                </button>
+                <button class="bg-gray-800 text-white px-4 py-2 rounded-lg">
+                  Trending
+                </button>
+                <button class="bg-gray-800 text-white px-4 py-2 rounded-lg">
+                  Most Cited
+                </button>
+                <button class="bg-gray-800 text-white px-4 py-2 rounded-lg">
+                  DAO Approved
+                </button>
+              </div>
+
+              <!-- Discussion Card -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <div class="flex gap-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-12 h-12 bg-purple-600/20 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-purple-400 font-medium">SK</span>
+                    </div>
+                  </div>
+                  <div class="flex-grow">
+                    <div class="flex items-center gap-2 mb-2">
+                      <h3 class="text-white font-medium">
+                        Bias in Large Language Models
+                      </h3>
+                      <span
+                        class="bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full text-xs"
+                        >AI Ethics</span
+                      >
+                      <span
+                        class="bg-green-500/20 text-green-300 px-2 py-0.5 rounded-full text-xs"
+                        >Verified Research</span
+                      >
+                    </div>
+
+                    <p class="text-gray-400 mb-4">
+                      Exploring methods to reduce bias in large language models
+                      through improved training data and model architecture...
+                    </p>
+
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <span
+                          class="flex items-center gap-1 text-sm text-gray-400"
+                        >
+                          <i
+                            data-lucide="shield-check"
+                            class="w-4 h-4 text-green-400"
+                          ></i>
+                          Dr. Sarah Kim (Trust Score: 95)
+                        </span>
+                        <span
+                          class="flex items-center gap-1 text-sm text-purple-400"
+                        >
+                          <i data-lucide="link" class="w-4 h-4"></i>
+                          Harvard AI Lab
+                        </span>
+                      </div>
+                      <div
+                        class="flex items-center gap-3 text-sm text-gray-400"
+                      >
+                        <span>15 replies</span>
+                        <span>3.2k views</span>
+                        <span>2h ago</span>
+                      </div>
+                    </div>
+
+                    <!-- AI Summary -->
+                    <div class="mt-4 bg-gray-700/30 rounded-lg p-3">
+                      <div class="flex items-center gap-2 mb-2">
+                        <i
+                          data-lucide="brain"
+                          class="w-4 h-4 text-purple-400"
+                        ></i>
+                        <span class="text-sm text-purple-400">AI Summary</span>
+                      </div>
+                      <p class="text-sm text-gray-400">
+                        Discussion focuses on three main approaches: 1) Diverse
+                        training data, 2) Debiasing techniques, 3) Model
+                        architecture modifications.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Add more discussion cards -->
+              <!-- Discussion Card 2 -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <div class="flex gap-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-blue-400 font-medium">RJ</span>
+                    </div>
+                  </div>
+                  <div class="flex-grow">
+                    <div class="flex items-center gap-2 mb-2">
+                      <h3 class="text-white font-medium">
+                        Smart Contract Security in DeFi Applications
+                      </h3>
+                      <span
+                        class="bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded-full text-xs"
+                        >Blockchain</span
+                      >
+                      <span
+                        class="bg-green-500/20 text-green-300 px-2 py-0.5 rounded-full text-xs"
+                        >Verified Research</span
+                      >
+                    </div>
+
+                    <p class="text-gray-400 mb-4">
+                      Discussing novel approaches to enhance smart contract
+                      security in decentralized finance applications, focusing
+                      on formal verification methods...
+                    </p>
+
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <span
+                          class="flex items-center gap-1 text-sm text-gray-400"
+                        >
+                          <i
+                            data-lucide="shield-check"
+                            class="w-4 h-4 text-green-400"
+                          ></i>
+                          Dr. Robert Johnson (Trust Score: 92)
+                        </span>
+                        <span
+                          class="flex items-center gap-1 text-sm text-purple-400"
+                        >
+                          <i data-lucide="link" class="w-4 h-4"></i>
+                          MIT Blockchain Lab
+                        </span>
+                      </div>
+                      <div
+                        class="flex items-center gap-3 text-sm text-gray-400"
+                      >
+                        <span>23 replies</span>
+                        <span>2.8k views</span>
+                        <span>4h ago</span>
+                      </div>
+                    </div>
+
+                    <!-- AI Summary -->
+                    <div class="mt-4 bg-gray-700/30 rounded-lg p-3">
+                      <div class="flex items-center gap-2 mb-2">
+                        <i
+                          data-lucide="brain"
+                          class="w-4 h-4 text-purple-400"
+                        ></i>
+                        <span class="text-sm text-purple-400">AI Summary</span>
+                      </div>
+                      <p class="text-sm text-gray-400">
+                        Discussion highlights: 1) Automated auditing tools, 2)
+                        Formal verification frameworks, 3) Real-time monitoring
+                        systems for DeFi protocols.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Discussion Card 3 -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <div class="flex gap-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-12 h-12 bg-green-600/20 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-green-400 font-medium">ML</span>
+                    </div>
+                  </div>
+                  <div class="flex-grow">
+                    <div class="flex items-center gap-2 mb-2">
+                      <h3 class="text-white font-medium">
+                        Climate Change Prediction Models: A New Approach
+                      </h3>
+                      <span
+                        class="bg-green-500/20 text-green-300 px-2 py-0.5 rounded-full text-xs"
+                        >Climate Science</span
+                      >
+                      <span
+                        class="bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full text-xs"
+                        >Machine Learning</span
+                      >
+                    </div>
+
+                    <p class="text-gray-400 mb-4">
+                      Exploring the integration of machine learning models with
+                      traditional climate science methodologies for improved
+                      prediction accuracy...
+                    </p>
+
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <span
+                          class="flex items-center gap-1 text-sm text-gray-400"
+                        >
+                          <i
+                            data-lucide="shield-check"
+                            class="w-4 h-4 text-green-400"
+                          ></i>
+                          Dr. Maria Lee (Trust Score: 88)
+                        </span>
+                        <span
+                          class="flex items-center gap-1 text-sm text-purple-400"
+                        >
+                          <i data-lucide="link" class="w-4 h-4"></i>
+                          Stanford Climate Lab
+                        </span>
+                      </div>
+                      <div
+                        class="flex items-center gap-3 text-sm text-gray-400"
+                      >
+                        <span>18 replies</span>
+                        <span>1.9k views</span>
+                        <span>6h ago</span>
+                      </div>
+                    </div>
+
+                    <!-- AI Summary -->
+                    <div class="mt-4 bg-gray-700/30 rounded-lg p-3">
+                      <div class="flex items-center gap-2 mb-2">
+                        <i
+                          data-lucide="brain"
+                          class="w-4 h-4 text-purple-400"
+                        ></i>
+                        <span class="text-sm text-purple-400">AI Summary</span>
+                      </div>
+                      <p class="text-sm text-gray-400">
+                        Research proposes hybrid approach combining: 1) Deep
+                        learning models, 2) Traditional climate data, 3)
+                        Satellite imagery analysis.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Discussion Card 4 -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <div class="flex gap-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-12 h-12 bg-red-600/20 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-red-400 font-medium">AP</span>
+                    </div>
+                  </div>
+                  <div class="flex-grow">
+                    <div class="flex items-center gap-2 mb-2">
+                      <h3 class="text-white font-medium">
+                        Quantum Computing in Drug Discovery
+                      </h3>
+                      <span
+                        class="bg-red-500/20 text-red-300 px-2 py-0.5 rounded-full text-xs"
+                        >Quantum</span
+                      >
+                      <span
+                        class="bg-orange-500/20 text-orange-300 px-2 py-0.5 rounded-full text-xs"
+                        >Healthcare</span
+                      >
+                      <span
+                        class="bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-full text-xs"
+                        >Hot Topic</span
+                      >
+                    </div>
+
+                    <p class="text-gray-400 mb-4">
+                      Investigating the potential of quantum computing
+                      algorithms in accelerating drug discovery processes and
+                      molecular simulation...
+                    </p>
+
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <span
+                          class="flex items-center gap-1 text-sm text-gray-400"
+                        >
+                          <i
+                            data-lucide="shield-check"
+                            class="w-4 h-4 text-green-400"
+                          ></i>
+                          Dr. Alex Patel (Trust Score: 94)
+                        </span>
+                        <span
+                          class="flex items-center gap-1 text-sm text-purple-400"
+                        >
+                          <i data-lucide="link" class="w-4 h-4"></i>
+                          Quantum Research Institute
+                        </span>
+                      </div>
+                      <div
+                        class="flex items-center gap-3 text-sm text-gray-400"
+                      >
+                        <span>27 replies</span>
+                        <span>4.5k views</span>
+                        <span>12h ago</span>
+                      </div>
+                    </div>
+
+                    <!-- AI Summary -->
+                    <div class="mt-4 bg-gray-700/30 rounded-lg p-3">
+                      <div class="flex items-center gap-2 mb-2">
+                        <i
+                          data-lucide="brain"
+                          class="w-4 h-4 text-purple-400"
+                        ></i>
+                        <span class="text-sm text-purple-400">AI Summary</span>
+                      </div>
+                      <p class="text-sm text-gray-400">
+                        Key points: 1) Quantum algorithms for molecular
+                        modeling, 2) Speed improvements vs classical computing,
+                        3) Current hardware limitations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="space-y-6">
+              <!-- Engagement Stats -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <h3 class="text-white font-medium mb-4">Your Engagement</h3>
+                <div class="space-y-3">
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-400">Trust Score</span>
+                    <span class="text-green-400">95</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-400">Contributions</span>
+                    <span class="text-white">28</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-400">Citations</span>
+                    <span class="text-white">156</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Trending Topics -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <h3 class="text-white font-medium">Trending Topics</h3>
+                  <span class="text-sm text-purple-400">AI Curated</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="bg-gray-700/30 rounded-lg p-3">
+                    <div class="text-white text-sm">AI Ethics in Research</div>
+                    <div class="text-xs text-gray-400 mt-1">
+                      32 active discussions
+                    </div>
+                  </div>
+                  <!-- Add more trending topics -->
+                </div>
+              </div>
+
+              <!-- Top Contributors -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <h3 class="text-white font-medium mb-4">Top Contributors</h3>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-10 h-10 bg-purple-600/20 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-purple-400">SK</span>
+                    </div>
+                    <div>
+                      <div class="text-white text-sm">Dr. Sarah Kim</div>
+                      <div class="text-xs text-gray-400">Harvard AI Lab</div>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
