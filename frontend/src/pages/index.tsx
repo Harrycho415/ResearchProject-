@@ -1,27 +1,60 @@
-import { useRouter } from 'next/router';
-import { ClientLogin } from '@calimero-is-near/calimero-p2p-sdk';
-import { getNodeUrl, getStorageApplicationId } from '../utils/node';
+import React from 'react';
+import { SortButtons } from '../components/dashboard/SortButton';
+import { dashboardExample } from '../db/dashboardExample';
+import { DashboardList } from '../components/dashboard/Card';
+import DashboardStats from '../components/dashboard/StatsCard';
+import SearchBar from '../components/dashboard/SearchBar';
+import {
+  Database,
+  Users,
+  TrendingUp,
+  ShieldCheck,
+  Eye,
+  Heart,
+  MessageSquare,
+  Search,
+  Mic,
+} from 'lucide-react';
 
-export default function Index() {
-  const router = useRouter();
-
+export default function Dashboard() {
   return (
-    <div className="flex items-center justify-center h-screen text-white pl-[max(378px,25%)]">
-      <div className="text-center">
-        <div className="mb-4">
-          <ClientLogin
-            getNodeUrl={getNodeUrl}
-            getApplicationId={getStorageApplicationId}
-            sucessRedirect={() => router.push('/community')}
-          />
-        </div>
-        <div className="bg-slate-50 w-fit p-5 rounded-xl text-black mx-auto ">
-          <button
-            className="cursor-pointer"
-            onClick={() => router.push('/notification')}
-          >
-            Click to Login
-          </button>
+    <div className="bg-gray-900">
+      <div className="flex min-h-screen">
+        {/* Main Content */}
+        <div className="flex-1 ml-64">
+          {/* Top Search & Filter Bar */}
+          <div className="p-6 gradient-bg">
+            {/* Main Search */}
+            <div className="max-w-4xl mx-auto">
+              <SearchBar />
+              {/* Filter Tags */}
+              <SortButtons />
+              {/* Stats Overview */}
+              <DashboardStats />
+            </div>
+          </div>
+
+          {/* Main Content Area */}
+          <div className="p-6 bg-gray-900">
+            <div className="max-w-4xl mx-auto">
+              {/* Data Table */}
+              <div className="bg-gray-800 rounded-lg overflow-hidden">
+                {/* Table Header */}
+                <div className="grid grid-cols-[1fr_1fr_2fr_1fr] gap-4 p-4 bg-gray-700 text-gray-300 text-sm font-medium">
+                  <div>Provider</div>
+                  <div>Dataset</div>
+                  <div>Description</div>
+                  <div>Engagement</div>
+                </div>
+
+                {/* Entry 1 */}
+
+                <DashboardList contents={dashboardExample} />
+
+                {/* Additional entries go here */}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -2,10 +2,17 @@ import { Search, User } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { ClientLogin } from '@calimero-is-near/calimero-p2p-sdk';
+import { getNodeUrl, getStorageApplicationId } from '../utils/node';
+import { getJWTObject } from '../utils/storage';
 
 const Sidebar = () => {
   const router = useRouter();
   const [activeMenu, setActiveMenu] = useState('');
+
+  // const jwtObject = getJWTObject();
+  const jwtObject = false;
+  console.log(jwtObject);
 
   useEffect(() => {
     if (router.pathname) {
@@ -14,7 +21,7 @@ const Sidebar = () => {
   }, [router.pathname]); // ✅ router.pathname이 변경될 때 실행
 
   const menuItems = [
-    { name: 'Dashboard', path: '/dashboard' },
+    { name: 'Dashboard', path: '/' },
     { name: 'Profile', path: '/profile' },
     { name: 'Research Hub', path: '/researchhub', badge: 'New' },
     { name: 'Collaborations', path: '/collaboration' },
@@ -46,20 +53,33 @@ const Sidebar = () => {
         <Search className="w-4 h-4 absolute right-3 top-2.5 text-gray-400" />
       </div>
 
-      {/* User Mini Profile */}
-      <div className="flex items-center gap-3 mb-8">
-        <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-          <User className="w-6 h-6 text-gray-400" />
-        </div>
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="text-white">John</span>
-            <span className="text-green-500 text-sm">Verified</span>
+      {jwtObject ? (
+        <div className="flex items-center gap-3 h-[142px] p-2 my-2">
+          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+            <img
+              src="/profile.png"
+              alt="loading..."
+              className="-translate-y-2"
+            />
           </div>
-          <div className="text-gray-400 text-sm">Researcher</div>
-          <div className="text-gray-500 text-xs">0x1234...5678</div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-white">John</span>
+              <span className="text-green-500 text-sm">Verified</span>
+            </div>
+            <div className="text-gray-400 text-sm">Researcher</div>
+            <div className="text-gray-500 text-xs">0x1234...5678</div>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="text-sm pb-4">
+          <ClientLogin
+            getNodeUrl={getNodeUrl}
+            getApplicationId={getStorageApplicationId}
+            sucessRedirect={() => router.push('/community')}
+          />
+        </div>
+      )}
 
       {/* Menu Items */}
       <nav className="flex-1 space-y-1">

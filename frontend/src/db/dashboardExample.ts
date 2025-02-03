@@ -3,14 +3,14 @@
 export const dashboardExample = [
   {
     id: 1,
-    initials: 'MA',
-    name: 'Maria Anderson',
+    initials: 'JD',
+    name: 'Dr. John Doe',
     status: 'Verified',
-    datasetName: 'Neural Network Architecture Data',
-    tags: ['AI', 'Deep Learning'],
+    datasetName: 'Neural Network Architecture Dataset',
+    tags: ['AI', 'ML Models', 'Research'],
     description:
       'Comprehensive performance analysis of various neural network architectures...',
-    views: 2300,
+    views: 1523,
     likes: 456,
     comments: 89,
   },

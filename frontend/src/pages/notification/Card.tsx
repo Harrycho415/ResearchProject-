@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MoreVertical, Clock, Link, Check, X } from 'lucide-react';
 
 export default function Card({
@@ -10,9 +10,9 @@ export default function Card({
   purpose,
   requestTime,
   detailsLink,
-  onApprove,
-  onReject,
 }) {
+  const [approved, setApproved] = useState(false);
+
   return (
     <div className="bg-gray-800 rounded-lg p-4 notification-card">
       <div className="flex items-start gap-4">
@@ -60,22 +60,34 @@ export default function Card({
           </div>
 
           {/* 승인 & 거절 버튼 */}
-          <div className="flex items-center gap-3 mt-4">
-            <button
-              className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600"
-              onClick={onApprove}
-            >
-              <Check className="w-4 h-4" />
-              Approve
-            </button>
-            <button
-              className="px-4 py-2 bg-gray-700 text-gray-300 rounded-md flex items-center gap-2 hover:bg-gray-600"
-              onClick={onReject}
-            >
-              <X className="w-4 h-4" />
-              Reject
-            </button>
-          </div>
+
+          {approved ? (
+            <div className="flex items-center gap-3 mt-4">
+              <div className="px-4 py-2 bg-gray-700 text-white rounded-md flex items-center gap-2 hover:bg-green-600">
+                <Check className="w-4 h-4" />
+                Approved
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center gap-3 mt-4">
+              <button
+                className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600"
+                onClick={() => {
+                  setApproved(true);
+                }}
+              >
+                <Check className="w-4 h-4" />
+                Approve
+              </button>
+              <button
+                className="px-4 py-2 bg-gray-700 text-gray-300 rounded-md flex items-center gap-2 hover:bg-gray-600"
+                onClick={() => {}}
+              >
+                <X className="w-4 h-4" />
+                Reject
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
