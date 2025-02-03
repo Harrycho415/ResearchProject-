@@ -16,8 +16,6 @@ export default function NotiList({ contents }) {
             purpose={noti.purpose} // Purpose of the request
             requestTime={noti.requestTime} // Time of the request
             detailsLink={noti.detailsLink} // Link to view request details
-            onApprove={() => console.log(`Approved: ${noti.id}`)} // Action for approve
-            onReject={() => console.log(`Rejected: ${noti.id}`)} // Action for reject
           />
         ))
       ) : (

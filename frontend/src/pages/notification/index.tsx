@@ -17,7 +17,7 @@ import {
   XCircle,
   Award,
 } from 'lucide-react';
-import SortButton from '../../components/dashboard/SortButton';
+import { SortButtons } from '../../components/dashboard/SortButton';
 import NotiList from './NotiList';
 
 export default function notification() {
@@ -46,15 +46,7 @@ export default function notification() {
               </div>
 
               {/* Filter Tags */}
-              <div className="flex space-x-4 mb-6">
-                <SortButton contents="Sort by Date"> </SortButton>
-                <SortButton contents="Status"> </SortButton>
-                <SortButton contents="Dataset Type"> </SortButton>
-                <SortButton
-                  isClicked={true}
-                  contents="Blockchain Verified"
-                ></SortButton>
-              </div>
+              <SortButtons />
               {/* Stats Overview */}
               <div className="grid grid-cols-4 gap-4 mb-6">
                 <div className="glassmorphism rounded-lg p-4 text-white">

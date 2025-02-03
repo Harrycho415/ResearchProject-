@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { X, Database, File, User, ShieldCheck, Info, Send } from 'lucide-react';
 
-const RequestDataForm = () => {
+const RequestDataForm = ({ setShowPopup }) => {
+  const onHideClick = () => setShowPopup(false);
   return (
     <div className="">
       {/* Modal HTML */}
@@ -10,13 +11,13 @@ const RequestDataForm = () => {
           {/* Modal Content */}
           <div className="bg-gray-800 rounded-2xl w-[800px] max-h-[90vh] overflow-y-auto">
             {/* Modal Header */}
-            <div className="gradient-bg p-6 rounded-t-2xl sticky top-0 z-10">
+            <div className="gradient-bg p-6 rounded-t-2xl top-0 z-10">
               <div className="flex items-center justify-between">
                 <h2 className="text-xl text-white font-semibold">
                   Request Dataset Access
                 </h2>
                 <button
-                  onClick={() => {}}
+                  onClick={onHideClick}
                   className="text-white/70 hover:text-white"
                 >
                   <X className="w-6 h-6" />
@@ -183,7 +184,7 @@ const RequestDataForm = () => {
             </div>
 
             {/* Modal Footer */}
-            <div className="border-t border-gray-700 p-6 sticky bottom-0 bg-gray-800">
+            <div className="border-t border-gray-700 p-6 bottom-0 bg-gray-800">
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-2 text-gray-400">
                   <Info className="w-4 h-4" />
@@ -191,12 +192,15 @@ const RequestDataForm = () => {
                 </div>
                 <div className="flex items-center gap-4">
                   <button
-                    onClick={() => []}
+                    onClick={onHideClick}
                     className="px-4 py-2 text-gray-300 hover:text-white"
                   >
                     Cancel
                   </button>
-                  <button className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
+                  <button
+                    className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2"
+                    onClick={onHideClick}
+                  >
                     <Send className="w-4 h-4" />
                     <span>Submit Request</span>
                   </button>
