@@ -134,13 +134,27 @@
 
             <!-- Navigation -->
             <div class="flex gap-4">
-              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">General</button>
-              <button class="bg-purple-500 text-white px-4 py-2 rounded-lg">Research Topics</button>
-              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">Datasets</button>
-              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">Bounties</button>
-              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">Papers</button>
-              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">Collaboration</button>
-              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">Technical Support</button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                General Discussions
+              </button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Research
+              </button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Dataset Discussions
+              </button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Hackathon & Bounties
+              </button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Papers
+              </button>
+              <button class="bg-purple-500 text-white px-4 py-2 rounded-lg">
+                Collaboration
+              </button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Technical Support
+              </button>
             </div>
           </div>
         </div>
