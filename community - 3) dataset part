@@ -156,22 +156,22 @@
             <!-- Navigation -->
             <div class="flex gap-4">
               <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
-                General
+                General Discussions
               </button>
               <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
-                Research Topics
-              </button>
-              <button class="bg-purple-500 text-white px-4 py-2 rounded-lg">
-                Datasets
+                Research
               </button>
               <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
-                Bounties
+                Dataset Discussions
+              </button>
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+                Hackathon & Bounties
               </button>
               <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
                 Papers
               </button>
-              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
-                Collaboration Requests
+              <button class="bg-purple-500 text-white px-4 py-2 rounded-lg">
+                Collaboration
               </button>
               <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
                 Technical Support
@@ -374,7 +374,7 @@
                     </div>
                     <i data-lucide="award" class="w-5 h-5 text-yellow-400"></i>
                   </div>
-                  <!-- should add more contributors -->
+                  <!-- Add more contributors -->
                 </div>
               </div>
             </div>
