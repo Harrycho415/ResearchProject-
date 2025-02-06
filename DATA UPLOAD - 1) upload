@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChainScholar - Upload Dataset</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <style>
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          #9333ea 0%,
+          #3b82f6 50%,
+          #06b6d4 100%
+        );
+      }
+      .menu-hover:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+      }
+      .upload-zone {
+        border: 2px dashed rgba(255, 255, 255, 0.2);
+      }
+      .upload-zone.dragging {
+        border-color: rgba(147, 51, 234, 0.5);
+        background: rgba(147, 51, 234, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900">
+    <div class="flex min-h-screen">
+      <!-- Left Menu Bar -->
+      <div class="w-64 bg-gray-900 p-6 flex flex-col h-screen fixed">
+        <!-- Logo -->
+        <div class="flex items-center gap-3 mb-8">
+          <svg class="w-8 h-8 text-purple-500" viewBox="0 0 24 24" fill="none">
+            <path d="M13 10V3L4 14H7V21L16 10H13Z" fill="currentColor" />
+          </svg>
+          <span class="text-white text-xl font-semibold">ChainScholar</span>
+        </div>
+
+        <!-- Search -->
+        <div class="relative mb-8">
+          <input
+            type="text"
+            placeholder="AI-powered search..."
+            class="w-full bg-gray-800 text-gray-300 rounded-lg py-2 px-4 text-sm focus:outline-none"
+          />
+          <i
+            data-lucide="search"
+            class="w-4 h-4 absolute right-3 top-2.5 text-gray-400"
+          ></i>
+        </div>
+
+        <!-- User Mini Profile -->
+        <div class="flex items-center gap-3 mb-8">
+          <div
+            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center"
+          >
+            <i data-lucide="user" class="w-6 h-6 text-gray-400"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-white">John</span>
+              <span class="text-green-500 text-sm">Verified</span>
+            </div>
+            <div class="text-gray-400 text-sm">Researcher</div>
+            <div class="text-gray-500 text-xs">0x1234...5678</div>
+          </div>
+        </div>
+
+        <!-- Menu Items -->
+        <nav class="flex-1 space-y-1">
+          <a
+            href="#"
+            class="flex items-center text-gray-300 p-3 menu-hover bg-gray-800 rounded-lg"
+          >
+            <span class="text-lg">Dashboard</span>
+          </a>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Profile</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Research Hub</span>
+            <span
+              class="bg-purple-500 text-white text-xs px-2 py-1 rounded-full"
+              >New</span
+            >
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Community</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Web3 Wallet</span>
+            <span class="text-gray-400">2.5 ICP</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Notifications</span>
+            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full"
+              >3</span
+            >
+          </a>
+        </nav>
+
+        <!-- Bottom Items -->
+        <div class="mt-auto space-y-1">
+          <div class="flex items-center justify-between text-gray-300 p-3">
+            <span class="text-lg">Dark Mode</span>
+            <div class="w-12 h-6 bg-purple-500 rounded-full relative">
+              <div
+                class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"
+              ></div>
+            </div>
+          </div>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Help & AI Assistant</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="flex-1 ml-64">
+        <!-- Header Section -->
+        <div class="gradient-bg p-6">
+          <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-center mb-6">
+              <h1 class="text-2xl text-white font-semibold">Upload Dataset</h1>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="flex justify-between items-center mb-6">
+              <div class="flex items-center w-full">
+                <div class="relative flex flex-col items-center flex-1">
+                  <div
+                    class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="upload" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <span class="text-white text-sm mt-2">Upload Files</span>
+                </div>
+                <div class="h-1 flex-1 bg-gray-700">
+                  <div class="h-1 bg-purple-500" style="width: 0%"></div>
+                </div>
+                <div class="relative flex flex-col items-center flex-1">
+                  <div
+                    class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="brain" class="w-5 h-5 text-gray-400"></i>
+                  </div>
+                  <span class="text-gray-400 text-sm mt-2">AI Analysis</span>
+                </div>
+                <div class="h-1 flex-1 bg-gray-700"></div>
+                <div class="relative flex flex-col items-center flex-1">
+                  <div
+                    class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="shield" class="w-5 h-5 text-gray-400"></i>
+                  </div>
+                  <span class="text-gray-400 text-sm mt-2"
+                    >Privacy Settings</span
+                  >
+                </div>
+                <div class="h-1 flex-1 bg-gray-700"></div>
+                <div class="relative flex flex-col items-center flex-1">
+                  <div
+                    class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="wallet" class="w-5 h-5 text-gray-400"></i>
+                  </div>
+                  <span class="text-gray-400 text-sm mt-2">Monetization</span>
+                </div>
+                <div class="h-1 flex-1 bg-gray-700"></div>
+                <div class="relative flex flex-col items-center flex-1">
+                  <div
+                    class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="check" class="w-5 h-5 text-gray-400"></i>
+                  </div>
+                  <span class="text-gray-400 text-sm mt-2">Publish</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="max-w-6xl mx-auto p-6">
+          <!-- Step 1: Upload Files -->
+          <div class="mb-8">
+            <div class="upload-zone bg-gray-800 rounded-xl p-12 text-center">
+              <div class="mb-6">
+                <i
+                  data-lucide="upload-cloud"
+                  class="w-16 h-16 text-gray-500 mx-auto mb-4"
+                ></i>
+                <h3 class="text-white text-xl font-medium mb-2">
+                  Drop your dataset files here
+                </h3>
+                <p class="text-gray-400">
+                  Support for CSV, JSON, Excel, and other research data formats
+                </p>
+              </div>
+              <div class="flex justify-center gap-4">
+                <button
+                  class="bg-purple-500 text-white px-6 py-3 rounded-lg flex items-center gap-2"
+                >
+                  <i data-lucide="file-plus" class="w-5 h-5"></i>
+                  Browse Files
+                </button>
+                <button
+                  class="bg-gray-700 text-white px-6 py-3 rounded-lg flex items-center gap-2"
+                >
+                  <i data-lucide="folder" class="w-5 h-5"></i>
+                  Select Folder
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Features Preview -->
+          <div class="grid grid-cols-3 gap-6 mb-8">
+            <div class="bg-gray-800 rounded-xl p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <i data-lucide="brain" class="w-6 h-6 text-purple-400"></i>
+                <h3 class="text-white font-medium">AI Metadata Generation</h3>
+              </div>
+              <p class="text-gray-400 text-sm">
+                Our AI will automatically analyze your dataset and generate
+                comprehensive metadata
+              </p>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <i data-lucide="shield" class="w-6 h-6 text-blue-400"></i>
+                <h3 class="text-white font-medium">Calimero Privacy</h3>
+              </div>
+              <p class="text-gray-400 text-sm">
+                Secure your data with Calimero private shards and customizable
+                access controls
+              </p>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <i data-lucide="link" class="w-6 h-6 text-green-400"></i>
+                <h3 class="text-white font-medium">On-Chain Registration</h3>
+              </div>
+              <p class="text-gray-400 text-sm">
+                Your dataset will be registered on ICP blockchain for permanent
+                citation tracking
+              </p>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="flex justify-end gap-4">
+            <button class="bg-gray-700 text-white px-6 py-3 rounded-lg">
+              Cancel
+            </button>
+            <button
+              class="bg-purple-500 text-white px-6 py-3 rounded-lg flex items-center gap-2"
+            >
+              Continue to AI Analysis
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
