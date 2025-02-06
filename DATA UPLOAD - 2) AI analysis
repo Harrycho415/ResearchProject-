@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChainScholar - AI Metadata Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <style>
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          #9333ea 0%,
+          #3b82f6 50%,
+          #06b6d4 100%
+        );
+      }
+      .menu-hover:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900">
+    <div class="flex min-h-screen">
+      <!-- Left Menu Bar (Same as other pages) -->
+      <div class="w-64 bg-gray-900 p-6 flex flex-col h-screen fixed">
+        <!-- Logo -->
+        <div class="flex items-center gap-3 mb-8">
+          <svg class="w-8 h-8 text-purple-500" viewBox="0 0 24 24" fill="none">
+            <path d="M13 10V3L4 14H7V21L16 10H13Z" fill="currentColor" />
+          </svg>
+          <span class="text-white text-xl font-semibold">ChainScholar</span>
+        </div>
+
+        <!-- Search -->
+        <div class="relative mb-8">
+          <input
+            type="text"
+            placeholder="AI-powered search..."
+            class="w-full bg-gray-800 text-gray-300 rounded-lg py-2 px-4 text-sm focus:outline-none"
+          />
+          <i
+            data-lucide="search"
+            class="w-4 h-4 absolute right-3 top-2.5 text-gray-400"
+          ></i>
+        </div>
+
+        <!-- Menu Items -->
+        <nav class="flex-1 space-y-1">
+          <!-- Same menu items as other pages -->
+        </nav>
+
+        <!-- Bottom Items -->
+        <div class="mt-auto space-y-1">
+          <!-- Same bottom items as other pages -->
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="flex-1 ml-64">
+        <!-- Header Section -->
+        <div class="gradient-bg p-6">
+          <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-center mb-6">
+              <div>
+                <h1 class="text-2xl text-white font-semibold">
+                  AI Metadata Analysis
+                </h1>
+                <p class="text-white/70">
+                  Step 2: AI-Powered Dataset Analysis & Categorization
+                </p>
+              </div>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="flex justify-between items-center mb-6">
+              <div class="flex items-center w-full">
+                <div class="relative flex flex-col items-center flex-1">
+                  <div
+                    class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <span class="text-white text-sm mt-2">Upload Files</span>
+                </div>
+                <div class="h-1 flex-1 bg-purple-500"></div>
+                <div class="relative flex flex-col items-center flex-1">
+                  <div
+                    class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="brain" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <span class="text-white text-sm mt-2">AI Analysis</span>
+                </div>
+                <div class="h-1 flex-1 bg-gray-700"></div>
+                <div class="relative flex flex-col items-center flex-1">
+                  <div
+                    class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="shield" class="w-5 h-5 text-gray-400"></i>
+                  </div>
+                  <span class="text-gray-400 text-sm mt-2"
+                    >Privacy Settings</span
+                  >
+                </div>
+                <div class="h-1 flex-1 bg-gray-700"></div>
+                <div class="relative flex flex-col items-center flex-1">
+                  <div
+                    class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="wallet" class="w-5 h-5 text-gray-400"></i>
+                  </div>
+                  <span class="text-gray-400 text-sm mt-2">Monetization</span>
+                </div>
+                <div class="h-1 flex-1 bg-gray-700"></div>
+                <div class="relative flex flex-col items-center flex-1">
+                  <div
+                    class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="check" class="w-5 h-5 text-gray-400"></i>
+                  </div>
+                  <span class="text-gray-400 text-sm mt-2">Publish</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="max-w-6xl mx-auto p-6">
+          <div class="grid grid-cols-3 gap-6">
+            <!-- Left Column: AI Analysis -->
+            <div class="col-span-2 space-y-6">
+              <!-- AI-Generated Metadata -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <div class="flex items-center justify-between mb-6">
+                  <h3 class="text-white font-medium">AI-Generated Metadata</h3>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="brain" class="w-5 h-5 text-purple-400"></i>
+                    <span class="text-purple-400 text-sm"
+                      >AI Confidence: 95%</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Dataset Title -->
+                <div class="mb-6">
+                  <label class="text-gray-400 text-sm mb-2 block"
+                    >Dataset Title</label
+                  >
+                  <input
+                    type="text"
+                    value="Clinical Trial Results 2024 - Patient Response Analysis"
+                    class="w-full bg-gray-700 text-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  />
+                </div>
+
+                <!-- Dataset Description -->
+                <div class="mb-6">
+                  <label class="text-gray-400 text-sm mb-2 block"
+                    >Description</label
+                  >
+                  <textarea
+                    class="w-full bg-gray-700 text-white rounded-lg p-3 h-32 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  >
+This comprehensive dataset contains anonymized patient response data from clinical trials conducted in 2024. It includes demographic information, treatment outcomes, and side effect profiles across multiple trial phases.</textarea
+                  >
+                </div>
+
+                <!-- AI-Generated Tags -->
+                <div class="mb-6">
+                  <label class="text-gray-400 text-sm mb-2 block"
+                    >Research Tags</label
+                  >
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm"
+                      >Clinical Trials</span
+                    >
+                    <span
+                      class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm"
+                      >Healthcare Data</span
+                    >
+                    <span
+                      class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm"
+                      >Patient Response</span
+                    >
+                    <span
+                      class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm"
+                      >Medical Research</span
+                    >
+                    <button
+                      class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                    >
+                      + Add Tag
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Research Categories -->
+                <div>
+                  <label class="text-gray-400 text-sm mb-2 block"
+                    >Research Categories</label
+                  >
+                  <div class="grid grid-cols-2 gap-4">
+                    <div
+                      class="bg-gray-700 rounded-lg p-3 flex items-center justify-between"
+                    >
+                      <span class="text-white">Healthcare & Medicine</span>
+                      <input
+                        type="checkbox"
+                        checked
+                        class="w-4 h-4 accent-purple-500"
+                      />
+                    </div>
+                    <div
+                      class="bg-gray-700 rounded-lg p-3 flex items-center justify-between"
+                    >
+                      <span class="text-white">Clinical Research</span>
+                      <input
+                        type="checkbox"
+                        checked
+                        class="w-4 h-4 accent-purple-500"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dataset Analysis -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <h3 class="text-white font-medium mb-6">AI Dataset Analysis</h3>
+
+                <!-- Statistics -->
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                  <div class="bg-gray-700 rounded-lg p-4">
+                    <div class="text-sm text-gray-400 mb-1">Total Records</div>
+                    <div class="text-white text-lg">10,547</div>
+                  </div>
+                  <div class="bg-gray-700 rounded-lg p-4">
+                    <div class="text-sm text-gray-400 mb-1">
+                      Data Quality Score
+                    </div>
+                    <div class="text-green-400 text-lg">98%</div>
+                  </div>
+                  <div class="bg-gray-700 rounded-lg p-4">
+                    <div class="text-sm text-gray-400 mb-1">Missing Values</div>
+                    <div class="text-white text-lg">< 0.1%</div>
+                  </div>
+                </div>
+
+                <!-- Column Analysis -->
+                <div class="space-y-3">
+                  <div
+                    class="bg-gray-700 rounded-lg p-3 flex items-center justify-between"
+                  >
+                    <div>
+                      <div class="text-white">patient_id</div>
+                      <div class="text-sm text-gray-400">
+                        Unique Identifier (String)
+                      </div>
+                    </div>
+                    <div class="text-green-400">100% Complete</div>
+                  </div>
+                  <div
+                    class="bg-gray-700 rounded-lg p-3 flex items-center justify-between"
+                  >
+                    <div>
+                      <div class="text-white">treatment_outcome</div>
+                      <div class="text-sm text-gray-400">
+                        Categorical (String)
+                      </div>
+                    </div>
+                    <div class="text-green-400">99.9% Complete</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Additional Info -->
+            <div class="space-y-6">
+              <!-- Dataset Preview -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <h3 class="text-white font-medium mb-4">
+                  Research Impact Prediction
+                </h3>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-2">
+                    <i
+                      data-lucide="trending-up"
+                      class="w-5 h-5 text-purple-400"
+                    ></i>
+                    <span class="text-white">High Research Value</span>
+                  </div>
+                  <p class="text-sm text-gray-400">
+                    This dataset aligns with 47 active research projects in our
+                    network.
+                  </p>
+                  <div class="bg-purple-500/10 rounded-lg p-3">
+                    <div class="text-sm text-purple-400">
+                      Suggested Collaborators:
+                    </div>
+                    <div class="text-xs text-gray-400 mt-1">
+                      15 researchers working on similar datasets
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Citation Information -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <h3 class="text-white font-medium mb-4">
+                  Citation Information
+                </h3>
+                <div class="space-y-4">
+                  <div class="bg-gray-700 rounded-lg p-3">
+                    <div class="text-sm text-white mb-1">DOI</div>
+                    <div class="text-xs text-gray-400">
+                      10.1234/dataset.2024.001
+                    </div>
+                  </div>
+                  <div class="bg-gray-700 rounded-lg p-3">
+                    <div class="text-sm text-white mb-1">ICP Hash</div>
+                    <div class="text-xs text-purple-400">0x1234...5678</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="flex justify-between mt-6">
+            <button
+              class="bg-gray-700 text-white px-6 py-3 rounded-lg flex items-center gap-2"
+            >
+              <i data-lucide="arrow-left" class="w-5 h-5"></i>
+              Back to Upload
+            </button>
+            <button
+              class="bg-purple-500 text-white px-6 py-3 rounded-lg flex items-center gap-2"
+            >
+              Continue to Privacy Settings
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
