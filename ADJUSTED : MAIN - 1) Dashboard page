@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callock - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <style>
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          #9333ea 0%,
+          #3b82f6 50%,
+          #06b6d4 100%
+        );
+      }
+      .menu-hover:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+      }
+      .table-row-hover:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900">
+    <div class="flex min-h-screen">
+      <!-- Dark Menubar -->
+      <div class="w-64 bg-gray-900 p-6 flex flex-col h-screen fixed">
+        <!-- Logo -->
+        <div class="flex items-center gap-3 mb-8">
+          <svg class="w-8 h-8 text-purple-500" viewBox="0 0 24 24" fill="none">
+            <path d="M13 10V3L4 14H7V21L16 10H13Z" fill="currentColor" />
+          </svg>
+          <span class="text-white text-xl font-semibold">Callock</span>
+        </div>
+
+        <!-- Search -->
+        <div class="relative mb-8">
+          <input
+            type="text"
+            placeholder="AI-powered search..."
+            class="w-full bg-gray-800 text-gray-300 rounded-lg py-2 px-4 text-sm focus:outline-none"
+          />
+          <i
+            data-lucide="search"
+            class="w-4 h-4 absolute right-3 top-2.5 text-gray-400"
+          ></i>
+        </div>
+
+        <!-- User Mini Profile -->
+        <div class="flex items-center gap-3 mb-8">
+          <div
+            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center"
+          >
+            <i data-lucide="user" class="w-6 h-6 text-gray-400"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-white">John</span>
+              <span class="text-green-500 text-sm">Verified</span>
+            </div>
+            <div class="text-gray-400 text-sm">Researcher</div>
+            <div class="text-gray-500 text-xs">0x1234...5678</div>
+          </div>
+        </div>
+
+        <!-- Menu Items -->
+        <nav class="flex-1 space-y-1">
+          <a
+            href="#"
+            class="flex items-center text-gray-300 p-3 menu-hover bg-gray-800 rounded-lg"
+          >
+            <span class="text-lg">Dashboard</span>
+          </a>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Profile</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Research Hub</span>
+            <span
+              class="bg-purple-500 text-white text-xs px-2 py-1 rounded-full"
+              >New</span
+            >
+          </a>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Collaborations</span>
+          </a>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Community</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Web3 Wallet</span>
+            <span class="text-gray-400">2.5 ICP</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between text-gray-300 p-3 menu-hover"
+          >
+            <span class="text-lg">Notifications</span>
+            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full"
+              >3</span
+            >
+          </a>
+        </nav>
+
+        <!-- Bottom Items -->
+        <div class="mt-auto space-y-1">
+          <div class="flex items-center justify-between text-gray-300 p-3">
+            <span class="text-lg">Dark Mode</span>
+            <div class="w-12 h-6 bg-purple-500 rounded-full relative">
+              <div
+                class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"
+              ></div>
+            </div>
+          </div>
+          <a href="#" class="flex items-center text-gray-300 p-3 menu-hover">
+            <span class="text-lg">Help & AI Assistant</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="flex-1 ml-64">
+        <!-- Top Search & Filter Bar -->
+        <div class="p-6 gradient-bg">
+          <!-- Main Search -->
+          <div class="max-w-4xl mx-auto">
+            <div class="relative mb-6">
+              <i
+                data-lucide="search"
+                class="w-5 h-5 absolute left-4 top-3.5 text-gray-400"
+              ></i>
+              <input
+                type="text"
+                placeholder="Search for datasets, papers, or researchers..."
+                class="w-full bg-white rounded-lg pl-12 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+              <button
+                class="absolute right-3 top-2 bg-purple-500 text-white px-4 py-1.5 rounded-md flex items-center gap-2"
+              >
+                <i data-lucide="mic" class="w-4 h-4"></i>
+                <span>Voice Search</span>
+              </button>
+            </div>
+
+            <!-- Filter Tags -->
+            <div class="flex space-x-4 mb-6">
+              <button class="bg-white/20 text-white px-8 py-2 rounded-lg">
+                Sort by Date
+              </button>
+              <button class="bg-white/20 text-white px-8 py-2 rounded-lg">
+                Status
+              </button>
+              <button class="bg-white/20 text-white px-8 py-2 rounded-lg">
+                Dataset Type
+              </button>
+              <button class="bg-purple-500 text-white px-8 py-2 rounded-lg">
+                Blockchain Verified
+              </button>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="grid grid-cols-4 gap-4 max-w-4xl mx-auto">
+              <div class="glassmorphism rounded-lg p-4 text-white">
+                <div class="flex items-center gap-3 mb-2">
+                  <i data-lucide="database" class="w-5 h-5"></i>
+                  <span class="text-sm">Total Datasets</span>
+                </div>
+                <span class="text-2xl font-bold">1,234</span>
+              </div>
+              <div class="glassmorphism rounded-lg p-4 text-white">
+                <div class="flex items-center gap-3 mb-2">
+                  <i data-lucide="users" class="w-5 h-5"></i>
+                  <span class="text-sm">Active Researchers</span>
+                </div>
+                <span class="text-2xl font-bold">456</span>
+              </div>
+              <div class="glassmorphism rounded-lg p-4 text-white">
+                <div class="flex items-center gap-3 mb-2">
+                  <i data-lucide="trending-up" class="w-5 h-5"></i>
+                  <span class="text-sm">Growth Rate</span>
+                </div>
+                <span class="text-2xl font-bold">+27%</span>
+              </div>
+              <div class="glassmorphism rounded-lg p-4 text-white">
+                <div class="flex items-center gap-3 mb-2">
+                  <i data-lucide="shield-check" class="w-5 h-5"></i>
+                  <span class="text-sm">Verified Data</span>
+                </div>
+                <span class="text-2xl font-bold">89%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="p-6 bg-gray-900">
+          <div class="max-w-4xl mx-auto">
+            <!-- addition : new section for 'upload dataset' button -->
+            <div class="flex justify-between items-center mb-6">
+              <h2 class="text-xl text-white font-semibold">
+                Research Datasets
+              </h2>
+              <button
+                onclick="window.location.href='dataupload.html'"
+                class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2.5 rounded-lg flex items-center gap-2 transition-colors"
+              >
+                <i data-lucide="upload-cloud" class="w-5 h-5"></i>
+                <span>Upload Dataset</span>
+              </button>
+            </div>
+
+            <!-- Data Table -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden">
+              <!-- Table Header -->
+              <div
+                class="grid grid-cols-[auto_1fr_2fr_auto] gap-4 p-4 bg-gray-700 text-gray-300 text-sm font-medium"
+              >
+                <div>Provider</div>
+                <div>Dataset</div>
+                <div>Description</div>
+                <div>Engagement</div>
+              </div>
+
+              <!-- Entry 1 -->
+              <div
+                class="grid grid-cols-[auto_1fr_2fr_auto] gap-4 p-4 border-t border-gray-700 table-row-hover"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-medium"
+                  >
+                    MA
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-white text-sm">Maria Anderson</span>
+                    <div class="flex items-center gap-1">
+                      <i
+                        data-lucide="shield-check"
+                        class="w-4 h-4 text-green-500"
+                      ></i>
+                      <span class="text-xs text-gray-400">Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-white"
+                    >Neural Network Architecture Data</span
+                  >
+                  <div class="flex gap-2 mt-1">
+                    <span
+                      class="text-xs bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded"
+                      >AI</span
+                    >
+                    <span
+                      class="text-xs bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded"
+                      >Deep Learning</span
+                    >
+                  </div>
+                </div>
+                <div class="text-gray-300 text-sm">
+                  Comprehensive performance analysis of various neural network
+                  architectures...
+                </div>
+                <div class="flex items-center gap-4 text-gray-400">
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="eye" class="w-4 h-4"></i>
+                    <span class="text-sm">2.3k</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    <span class="text-sm">456</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <span class="text-sm">89</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Entry 2 -->
+              <div
+                class="grid grid-cols-[auto_1fr_2fr_auto] gap-4 p-4 border-t border-gray-700 table-row-hover"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-medium"
+                  >
+                    RJ
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-white text-sm">Dr. Robert Johnson</span>
+                    <div class="flex items-center gap-1">
+                      <i
+                        data-lucide="shield-check"
+                        class="w-4 h-4 text-green-500"
+                      ></i>
+                      <span class="text-xs text-gray-400">Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-white"
+                    >Blockchain Transaction Patterns</span
+                  >
+                  <div class="flex gap-2 mt-1">
+                    <span
+                      class="text-xs bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded"
+                      >Blockchain</span
+                    >
+                    <span
+                      class="text-xs bg-green-500/20 text-green-300 px-2 py-0.5 rounded"
+                      >Analytics</span
+                    >
+                  </div>
+                </div>
+                <div class="text-gray-300 text-sm">
+                  Analysis of transaction patterns and network effects in Web3
+                  systems...
+                </div>
+                <div class="flex items-center gap-4 text-gray-400">
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="eye" class="w-4 h-4"></i>
+                    <span class="text-sm">1.8k</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <span class="text-sm">123</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Entry 3 -->
+              <div
+                class="grid grid-cols-[auto_1fr_2fr_auto] gap-4 p-4 border-t border-gray-700 table-row-hover"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-medium"
+                  >
+                    SK
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-white text-sm">Sarah Kim</span>
+                    <div class="flex items-center gap-1">
+                      <i
+                        data-lucide="shield-check"
+                        class="w-4 h-4 text-green-500"
+                      ></i>
+                      <span class="text-xs text-gray-400">Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-white">Climate Change Impact Data</span>
+                  <div class="flex gap-2 mt-1">
+                    <span
+                      class="text-xs bg-green-500/20 text-green-300 px-2 py-0.5 rounded"
+                      >Environment</span
+                    >
+                    <span
+                      class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded"
+                      >Data Science</span
+                    >
+                  </div>
+                </div>
+                <div class="text-gray-300 text-sm">
+                  Global dataset analyzing climate change patterns and
+                  environmental impacts...
+                </div>
+                <div class="flex items-center gap-4 text-gray-400">
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="eye" class="w-4 h-4"></i>
+                    <span class="text-sm">3.1k</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    <span class="text-sm">678</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <span class="text-sm">123</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Entry 4 -->
+              <div
+                class="grid grid-cols-[auto_1fr_2fr_auto] gap-4 p-4 border-t border-gray-700 table-row-hover"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white font-medium"
+                  >
+                    DP
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-white text-sm">David Patel</span>
+                    <div class="flex items-center gap-1">
+                      <i
+                        data-lucide="shield-check"
+                        class="w-4 h-4 text-green-500"
+                      ></i>
+                      <span class="text-xs text-gray-400">Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-white"
+                    >Smart Contract Security Analysis</span
+                  >
+                  <div class="flex gap-2 mt-1">
+                    <span
+                      class="text-xs bg-red-500/20 text-red-300 px-2 py-0.5 rounded"
+                      >Security</span
+                    >
+                    <span
+                      class="text-xs bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded"
+                      >Smart Contracts</span
+                    >
+                  </div>
+                </div>
+                <div class="text-gray-300 text-sm">
+                  Comprehensive security audit data for blockchain smart
+                  contracts...
+                </div>
+                <div class="flex items-center gap-4 text-gray-400">
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="eye" class="w-4 h-4"></i>
+                    <span class="text-sm">2.7k</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    <span class="text-sm">542</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <span class="text-sm">95</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Entry 5 -->
+              <div
+                class="grid grid-cols-[auto_1fr_2fr_auto] gap-4 p-4 border-t border-gray-700 table-row-hover"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-yellow-600 rounded-full flex items-center justify-center text-white font-medium"
+                  >
+                    LM
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-white text-sm">Lisa Martinez</span>
+                    <div class="flex items-center gap-1">
+                      <i
+                        data-lucide="shield-check"
+                        class="w-4 h-4 text-green-500"
+                      ></i>
+                      <span class="text-xs text-gray-400">Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-white">Healthcare AI Models</span>
+                  <div class="flex gap-2 mt-1">
+                    <span
+                      class="text-xs bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded"
+                      >Healthcare</span
+                    >
+                    <span
+                      class="text-xs bg-pink-500/20 text-pink-300 px-2 py-0.5 rounded"
+                      >AI</span
+                    >
+                  </div>
+                </div>
+                <div class="text-gray-300 text-sm">
+                  Machine learning models for medical diagnosis and treatment
+                  prediction...
+                </div>
+                <div class="flex items-center gap-4 text-gray-400">
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="eye" class="w-4 h-4"></i>
+                    <span class="text-sm">4.2k</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    <span class="text-sm">891</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <span class="text-sm">167</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Entry 6 -->
+              <div
+                class="grid grid-cols-[auto_1fr_2fr_auto] gap-4 p-4 border-t border-gray-700 table-row-hover"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-medium"
+                  >
+                    TC
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-white text-sm">Tom Chen</span>
+                    <div class="flex items-center gap-1">
+                      <i
+                        data-lucide="shield-check"
+                        class="w-4 h-4 text-green-500"
+                      ></i>
+                      <span class="text-xs text-gray-400">Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-white">Quantum Computing Research</span>
+                  <div class="flex gap-2 mt-1">
+                    <span
+                      class="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded"
+                      >Quantum</span
+                    >
+                    <span
+                      class="text-xs bg-orange-500/20 text-orange-300 px-2 py-0.5 rounded"
+                      >Research</span
+                    >
+                  </div>
+                </div>
+                <div class="text-gray-300 text-sm">
+                  Experimental results from quantum computing simulations and
+                  algorithms...
+                </div>
+                <div class="flex items-center gap-4 text-gray-400">
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="eye" class="w-4 h-4"></i>
+                    <span class="text-sm">2.9k</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    <span class="text-sm">634</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <span class="text-sm">112</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
