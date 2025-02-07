@@ -161,7 +161,7 @@
               <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
                 Research
               </button>
-              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
+              <button class="bg-purple-500 text-white px-4 py-2 rounded-lg">
                 Dataset Discussions
               </button>
               <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
@@ -170,7 +170,7 @@
               <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
                 Papers
               </button>
-              <button class="bg-purple-500 text-white px-4 py-2 rounded-lg">
+              <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
                 Collaboration
               </button>
               <button class="bg-white/10 text-white px-4 py-2 rounded-lg">
