@@ -15,8 +15,10 @@ import {
   Search,
   Mic,
 } from 'lucide-react';
+import { useRouter } from 'next/router';
 
 export default function Dashboard() {
+  const router = useRouter();
   return (
     <div className="bg-gray-900">
       <div className="flex min-h-screen">
@@ -37,6 +39,19 @@ export default function Dashboard() {
           {/* Main Content Area */}
           <div className="p-6 bg-gray-900">
             <div className="max-w-4xl mx-auto">
+              {/* Entry 1 */}
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-xl text-white font-semibold">
+                  Research Datasets
+                </h2>
+                <button
+                  onClick={() => router.push('uploaddata')}
+                  className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2.5 rounded-lg flex items-center gap-2 transition-colors"
+                >
+                  <i data-lucide="upload-cloud" className="w-5 h-5"></i>
+                  <span>Upload Dataset</span>
+                </button>
+              </div>
               {/* Data Table */}
               <div className="bg-gray-800 rounded-lg overflow-hidden">
                 {/* Table Header */}
@@ -46,8 +61,6 @@ export default function Dashboard() {
                   <div>Description</div>
                   <div>Engagement</div>
                 </div>
-
-                {/* Entry 1 */}
 
                 <DashboardList contents={dashboardExample} />
 
