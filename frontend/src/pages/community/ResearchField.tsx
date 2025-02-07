@@ -43,7 +43,7 @@ const ResearchTopicsPage = () => {
   ];
 
   return (
-    <div className="flex bg-gray-900">
+    <div className="flex bg-gray-900 mt-4">
       <div className="flex-1">
         {/* Main Content */}
         <div className="max-w-6xl mx-auto p-6">
