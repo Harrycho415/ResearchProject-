@@ -28,7 +28,7 @@ export default function Auth() {
             <div className="items-center bg-[#1C1C1C] p-8 gap-y-4 rounded-lg">
               <div className="flex justify-center items-center gap-3 px-14">
                 <div className="text-white text-4xl font-semibold">
-                  Only Peers
+                  Research Project
                 </div>
               </div>
               <ClientLogin
