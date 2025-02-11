@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   UploadCloud,
   FilePlus,
@@ -8,8 +8,15 @@ import {
   Link,
   ArrowRight,
 } from 'lucide-react';
+import { useRouter } from 'next/router';
 
 const UploadDataset = ({ onNext }: { onNext: () => void }) => {
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleButtonClick = () => {
+    fileInputRef.current?.click();
+  };
+
   return (
     <div className="flex-1 ml-64 p-6">
       <h1 className="text-2xl text-white font-semibold mb-6">Upload Dataset</h1>
@@ -22,9 +29,18 @@ const UploadDataset = ({ onNext }: { onNext: () => void }) => {
           Support for CSV, JSON, Excel, and other research data formats
         </p>
         <div className="flex justify-center gap-4 mt-4">
-          <button className="bg-purple-500 text-white px-6 py-3 rounded-lg flex items-center gap-2">
+          <button
+            className="bg-purple-500 text-white px-6 py-3 rounded-lg flex items-center gap-2"
+            onClick={handleButtonClick}
+          >
             <FilePlus className="w-5 h-5" /> Browse Files
           </button>
+          <input
+            type="file"
+            ref={fileInputRef}
+            className="hidden"
+            onChange={onNext}
+          />
           <button className="bg-gray-700 text-white px-6 py-3 rounded-lg flex items-center gap-2">
             <Folder className="w-5 h-5" /> Select Folder
           </button>

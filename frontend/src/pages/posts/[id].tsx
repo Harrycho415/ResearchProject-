@@ -68,14 +68,14 @@ const DatasetDetails = () => {
                 {/* Provider Profile */}
                 <div className="w-16 h-16 bg-purple-600/20 rounded-full flex items-center justify-center">
                   <span className="text-purple-400 text-xl font-semibold">
-                    JD
+                    HC
                   </span>
                 </div>
                 {/* Dataset Title & Info */}
                 <div>
                   <div className="flex items-center gap-3 mb-2">
                     <h1 className="text-2xl text-white font-semibold">
-                      Neural Network Architecture Dataset
+                      Clinical Trial Results 2024 - Patient Response Analysis
                     </h1>
                     <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm">
                       📊 CSV
@@ -88,7 +88,7 @@ const DatasetDetails = () => {
                         alt="Provider"
                         className="w-6 h-6 rounded-full"
                       />
-                      <span className="text-gray-300">Dr. John Doe</span>
+                      <span className="text-gray-300">Harry Cho</span>
                     </div>
                     <span className="bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full text-xs">
                       ✅ Web3 Verified
@@ -103,15 +103,15 @@ const DatasetDetails = () => {
               <div className="flex items-center gap-6 text-gray-400">
                 <div className="flex items-center gap-2">
                   <Eye className="w-5 h-5" />
-                  <span>1.5k Views</span>
+                  <span>1 Views</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Download className="w-5 h-5" />
-                  <span>342 Downloads</span>
+                  <span>0 Downloads</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="w-5 h-5" />
-                  <span>4.8 Rating</span>
+                  <span>0 Rating</span>
                 </div>
               </div>
             </div>
@@ -159,7 +159,7 @@ const DatasetDetails = () => {
                   <div className="text-gray-400 text-sm mb-1">
                     Published Date
                   </div>
-                  <div className="text-white">January 1, 2025</div>
+                  <div className="text-white">February 2, 2025</div>
                 </div>
                 <div>
                   <div className="text-gray-400 text-sm mb-1">
@@ -191,13 +191,13 @@ const DatasetDetails = () => {
                   <div className="text-gray-400 text-sm mb-1">Tags</div>
                   <div className="flex gap-2">
                     <span className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-sm">
-                      AI
+                      Clinical Trials{' '}
                     </span>
                     <span className="bg-green-500/20 text-green-300 px-2 py-1 rounded-full text-sm">
-                      ML Models
+                      Healthcare Data
                     </span>
                     <span className="bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full text-sm">
-                      Research
+                      Patient Response
                     </span>
                   </div>
                 </div>
@@ -212,12 +212,8 @@ const DatasetDetails = () => {
             </h2>
             <div className="text-gray-300 space-y-4">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.
+                This dataset contains anonymized patient response data from
+                clinical trials conducted in 2024.
               </p>
             </div>
 

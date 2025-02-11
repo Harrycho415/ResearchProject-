@@ -5,8 +5,10 @@ import PrivacySettings from './PrivacySettings';
 import Monetization from './Monetization';
 import PublishDataset from './PublishDataset';
 import ProgressSteps from './ProgressSteps';
+import { useRouter } from 'next/router';
 
 const App = () => {
+  const router = useRouter();
   const [step, setStep] = useState<
     'upload' | 'analysis' | 'privacy' | 'monetization' | 'publish'
   >('upload');
@@ -46,7 +48,10 @@ const App = () => {
         {step === 'publish' && (
           <PublishDataset
             onBack={() => setStep('monetization')}
-            onPublish={() => alert('Dataset successfully published!')}
+            onPublish={() => {
+              alert('Dataset successfully published!');
+              router.push('/?new=true');
+            }}
           />
         )}
       </div>
